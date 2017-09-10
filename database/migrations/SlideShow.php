@@ -4,7 +4,7 @@
 		  parent::setConnect();
 		  try {
 		  	parent::setConnect();
-			$createSlideShow = "Create table news (
+			$createSlideShow = "Create table slider (
 								slide_id		int(11)		Auto_increment	Not null, 
 								slide_image		text					Not null,
 								slide_title		varchar(255)				Null,

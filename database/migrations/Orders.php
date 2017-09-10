@@ -10,7 +10,7 @@
 							 total			int(11)					Not null,
 							 order_status		tinyint(1)				Not null,
 							 order_note		text					Null,
-							 user_id		int(11)					Not null,
+							 client_id		int(11)					Not null,
 							 Primary key (order_id)
 							 );
 							";

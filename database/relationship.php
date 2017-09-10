@@ -16,12 +16,12 @@
       	  }
 
       	  try {
-			$userToOrders = "Alter table orders
-							 Add constraint	user_orders
-							 Foreign key (user_id)
-							 References users (user_id);
+			$clientToOrders = "Alter table orders
+							 Add constraint	client_orders
+							 Foreign key (client_id)
+							 References clients (client_id);
 							";
-			$this->db->exec($userToOrders);
+			$this->db->exec($clientToOrders);
 		  }
 		  catch(PDOException $e) {
         	echo $e->getMessage();
@@ -39,17 +39,17 @@
         	echo $e->getMessage();
       	  }
 
-      	  try {
-			$userToProduct = "Alter table products
-							 Add constraint	user_product
-							 Foreign key (user_id)
-							 References users (user_id);
-							";
-			$this->db->exec($userToProduct);
-		  }
-		  catch(PDOException $e) {
-        	echo $e->getMessage();
-      	  }
+   //    	  try {
+			// $userToProduct = "Alter table products
+			// 				 Add constraint	user_product
+			// 				 Foreign key (user_id)
+			// 				 References users (user_id);
+			// 				";
+			// $this->db->exec($userToProduct);
+		 //  }
+		 //  catch(PDOException $e) {
+   //      	echo $e->getMessage();
+   //    	  }
 
       	  try {
 			$productToImg = "Alter table products

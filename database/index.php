@@ -39,6 +39,7 @@
   $cate = new Categories();
   $contactForm = new ContactForm();
   $img = new Images();
+  $client = new Client();
   $orderDetail = new OrderDetail();
   $orders = new Orders();
   $products = new Products();
@@ -56,6 +57,7 @@
   $img -> createImages();
   $orderDetail -> createOrderDetail();
   $orders -> createOrders();
+  $client -> createClient();
   $products -> createProducts();
   $slideShow -> createSlideShow();
   $users -> createUsers();
