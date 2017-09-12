@@ -3,14 +3,15 @@
   include '../../config.php';
 
   //nhúng kết nối database
-  include $root.'database/database.php';
+  include $ROOT.'database/database.php';
 
   //nhúng thư viện
-  include $root.'system/libs/basic_libs.php';
+  include $ROOT.'system/libs/basic_libs.php';
 
   //thêm các modul
 
 
   //thêm controller
+  include 'app/CategoriesController.php';
  
 ?>

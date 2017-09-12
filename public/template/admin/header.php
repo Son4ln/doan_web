@@ -11,7 +11,6 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-    <!-- Bootstrap core CSS     -->
     <link href="../../public/css/bootstrap.min.css" rel="stylesheet" />
 
     <!--  Material Dashboard CSS    -->
@@ -22,7 +21,33 @@
 
     <!--     Fonts and icons     -->
     <link href="../../public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../public/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
+    <!-- nhúng js -->
+
+    <!--   Core JS Files   -->
+    <script src="../../public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="../../public/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- <script src="../../public/js/material.min.js" type="text/javascript"></script> -->
+
+    <!--  Charts Plugin -->
+    <!-- <script src="../../public/js/chartist.min.js"></script> -->
+
+    <!--  Notifications Plugin    -->
+    <!-- <script src="../../public/js/bootstrap-notify.js"></script> -->
+
+    <!--  Google Maps Plugin    -->
+
+    <!-- Material Dashboard javascript methods -->
+    <!-- <script src="../../public/js/material-dashboard.js"></script> -->
+
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <!-- <script src="../../public/js/demo.js"></script> -->
+
+    <script src="../../public/js/jquery.dataTables.min.js"></script>
+    <script src="../../public/js/dataTables.bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -38,7 +63,7 @@
 
             <div class="logo">
                 <a href="" class="simple-text">
-                    Creative Tim
+                    Đỗ An Shop
                 </a>
             </div>
 
@@ -47,13 +72,13 @@
                     <li class="active">
                         <a href="dashboard.html">
                             <i class="material-icons">dashboard</i>
-                            <p>Dashboard</p>
+                            <p>Bảng Điều Khiển</p>
                         </a>
                     </li>
                     <li>
-                        <a href="user.html">
-                            <i class="material-icons">person</i>
-                            <p>Users</p>
+                        <a href="">
+                            <i class="fa fa-bars"></i>
+                            <p>Loại Sản Phẩm</p>
                         </a>
                     </li>
                     <li>

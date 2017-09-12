@@ -25,6 +25,11 @@
     case 'home':
       include '../view/home.php';
       break;
+
+    case 'listCate':
+      $cate = new Categories();
+      $cate -> listCategories();
+      break;
   
     default:
       //include lỗi 404 vào đây

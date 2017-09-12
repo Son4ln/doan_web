@@ -1,4 +1,4 @@
-<?php include $root.'public/template/admin/header.php'; ?>
+<?php include $ROOT.'public/template/admin/header.php'; ?>
 
 <div class="content">
 	<div class="container-fluid">
@@ -209,4 +209,4 @@
 				
 </div>
 
-<?php include $root.'public/template/admin/footer.php'; ?>			
+<?php include $ROOT.'public/template/admin/footer.php'; ?>			
