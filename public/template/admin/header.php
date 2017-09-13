@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="" />
+    <link rel="icon" type="image/png" href="" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>Material Dashboard by Creative Tim</title>
@@ -12,13 +12,11 @@
     <meta name="viewport" content="width=device-width" />
 
     <link href="../../public/css/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="../../public/css/bootstrap-editable.css" rel="stylesheet"/>
     <!--  Material Dashboard CSS    -->
     <link href="../../public/css/material-dashboard.css" rel="stylesheet"/>
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="../../public/css/demo.css" rel="stylesheet" />
-
     <!--     Fonts and icons     -->
     <link href="../../public/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../public/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -30,7 +28,7 @@
     <!--   Core JS Files   -->
     <script src="../../public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="../../public/js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- <script src="../../public/js/material.min.js" type="text/javascript"></script> -->
+    <script src="../../public/js/material.min.js" type="text/javascript"></script>
 
     <!--  Charts Plugin -->
     <!-- <script src="../../public/js/chartist.min.js"></script> -->
@@ -41,20 +39,21 @@
     <!--  Google Maps Plugin    -->
 
     <!-- Material Dashboard javascript methods -->
-    <!-- <script src="../../public/js/material-dashboard.js"></script> -->
+    <script src="../../public/js/material-dashboard.js"></script>
 
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <!-- <script src="../../public/js/demo.js"></script> -->
 
     <script src="../../public/js/jquery.dataTables.min.js"></script>
     <script src="../../public/js/dataTables.bootstrap.min.js"></script>
+    <script src="../../public/js/bootstrap-editable.min.js"></script>
 </head>
 
 <body>
 
     <div class="wrapper">
 
-        <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+        <div class="sidebar" data-color="purple" data-image="">
             <!--
                 Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -69,14 +68,30 @@
 
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
-                        <a href="dashboard.html">
+                    <li class="
+                      <?php
+                        if(!isset($_GET['action']) || $_GET['action'] == 'home'){
+                          echo 'active';
+                        }
+                      
+                      ?>"
+                    ">
+                        <a href="?action=home">
                             <i class="material-icons">dashboard</i>
                             <p>Bảng Điều Khiển</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="">
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'listCate') {
+                             echo 'active';
+                          }
+                        }
+                      
+                      ?>"
+                    ">
+                        <a href="?action=listCate">
                             <i class="fa fa-bars"></i>
                             <p>Loại Sản Phẩm</p>
                         </a>
