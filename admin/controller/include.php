@@ -10,8 +10,14 @@
 
   //thêm các modul
   include '../model/Categories.php';
+  include '../model/clientsModel.php';
+  include '../model/imagesModel.php';
+  include '../model/ordersModel.php';
+  include '../model/productsModel.php';
 
   //thêm controller
   include 'app/CategoriesController.php';
+  include 'app/OrdersController.php';
+  include 'app/ProductsController.php';
  
 ?>

@@ -52,10 +52,10 @@
    //    	  }
 
       	  try {
-			$productToImg = "Alter table products
+			$productToImg = "Alter table images
 							 Add constraint	image_product
-							 Foreign key (image_id)
-							 References images (image_id);
+							 Foreign key (product_id)
+							 References products (product_id);
 							";
 			$this->db->exec($productToImg);
 		  }
