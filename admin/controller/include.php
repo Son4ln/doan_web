@@ -9,7 +9,7 @@
   include $ROOT.'system/libs/basic_libs.php';
 
   //thêm các modul
-
+  include '../model/Categories.php';
 
   //thêm controller
   include 'app/CategoriesController.php';

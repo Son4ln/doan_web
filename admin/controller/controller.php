@@ -30,6 +30,21 @@
       $cate = new Categories();
       $cate -> listCategories();
       break;
+
+    case 'deleteCate':
+      $cate = new Categories();
+      $cate -> deleteCate();
+      break;
+
+    case 'updateCate':
+      $cate = new Categories();
+      $cate -> updateCategory();
+      break;
+
+    case 'addCate':
+      $cate = new Categories();
+      $cate -> addCategory();
+      break;
   
     default:
       //include lỗi 404 vào đây
