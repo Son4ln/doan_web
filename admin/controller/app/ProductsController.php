@@ -33,7 +33,7 @@
         $action = 'addProduct';
         $lv = 'danger';
         BasicLibs::setAlert($mess, $lv);
-        BasicLibs::redirectId($action, $id);
+        BasicLibs::redirect($action);
         die();
       }
 
@@ -44,7 +44,7 @@
       $action = 'listProduct';
       $lv = 'success';
       BasicLibs::setAlert($mess, $lv);
-      BasicLibs::redirectId($action, $id);
+      BasicLibs::redirect($action);
     }
 
   	function deleteProduct() {

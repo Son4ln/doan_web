@@ -124,8 +124,8 @@
                       <div class="col-xs-6">
                         <select class="form-control" name="cate">
                           <?php
-                            $cate = new CategoriesModel();
-                            $category = $cate -> getAllCategories();
+                            $cate = new CateModel();
+                            $category = $cate -> getAllCate();
                             foreach ($category as $valueCate) {
                           ?>
                             <option value="<?php echo  $valueCate['category_id']; ?>">
@@ -151,7 +151,7 @@
                       </button>
                     </a>
 
-                    <button type="submit" disabled="disabled" class="btn btn-primary pull-left">Thêm</button>
+                    <button type="submit" class="btn btn-primary pull-left">Thêm</button>
                   </div>
                   <div class="clearfix"></div>
                 </div>
