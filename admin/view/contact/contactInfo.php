@@ -14,14 +14,14 @@
             </div>
             <div class="card-content">
               <form enctype="multipart/form-data" method="post" action="?action=updateContactInfo"> 
-              	<center><img id="review-img" src="../../upload/<?php echo $resultContactInfo['logo']; ?>" style="width: 250px"></center>
-              	<input type="hidden" name="current-img" value="<?php echo $resultContactInfo['logo']; ?>">
+              	<center><img id="review-img" src="../../upload/<?php echo $resultContactInfo['logo']; ?>" style="width: 200px;"></center>
+                <input type="hidden" name="current-img" value="<?php echo $resultContactInfo['logo']; ?>">
                 <div class="row">
-                	<div class="col-xs-8 col-sm-offset-2 text-center">
-                		<label class="btn btn-default btn-file btn-primary">Browse
-                      <input type="file" style="display: none;" name="logo">
-			              </label>
-                	</div>
+                  <div class="col-xs-8 col-sm-offset-2 text-center">
+                    <label class="btn btn-default btn-file btn-primary">
+                    Browse <input type="file" style="display: none;" name="logo">
+                    </label>
+                  </div>
                 </div>
 
                 <?php
@@ -74,7 +74,7 @@
                 	</div>
 
                 	<div class="col-xs-7">
-                		<input type="text" class="form-control" name="email" id="email" value="<?php echo $resultContactInfo['email']; ?>">                    		
+                		<input type="email" class="form-control" name="email" id="email" value="<?php echo $resultContactInfo['email']; ?>">                    		
                 	</div>
                 </div>
 

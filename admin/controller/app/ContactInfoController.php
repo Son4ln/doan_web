@@ -10,11 +10,12 @@
     	{
     		$path = $GLOBALS['UPLOADIMG'];
     		$address = $_POST['address'];
+        $time = time();
 
     		if(empty($_FILES['logo']['name'])){
     		  $logoName = $_POST['current-img'];
     		} else {
-    		  $logoName = time().'-'.$_FILES['logo']['name'];
+    		  $logoName = $time.'-'.$_FILES['logo']['name'];
     		}
 
       		$branch = $_POST['branch'];
@@ -38,7 +39,7 @@
     	  	  $currentImg = $_POST['current-img'];
   		      BasicLibs::deleteFile($currentImg,$path);
             $fileLogo = $_FILES['logo'];
-            BasicLibs::uploadFile($fileLogo, $path);
+            BasicLibs::uploadFile($time, $fileLogo, $path);
     	  	}
 
     	  	$mess = "Sửa thành công";
