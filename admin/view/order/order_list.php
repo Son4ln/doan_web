@@ -58,10 +58,10 @@
                     </td>
                     <td class="text-center">
                       <a href="?action=orderDetail&id=<?php echo $value['order_id']; ?>">
-                      <i class="fa fa-eye"> Xem</i></a> | 
+                      <i class="fa fa-eye"></i> Xem</a> | 
                       <a onclick="return confirm('Bạn có chắc muốn xóa hóa đơn này')" 
                       href="?action=deleteOrder&id=<?php echo $value['order_id']; ?>"> 
-                      <i class="fa fa-trash"> Xóa</i></a>
+                      <i class="fa fa-trash"></i> Xóa</a>
                     </td>
                   </tr>
                   <?php }

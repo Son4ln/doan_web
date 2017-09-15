@@ -19,7 +19,7 @@
                 <div class="row">
                   <div class="col-xs-8 col-sm-offset-2 text-center">
                     <label class="btn btn-default btn-file btn-primary">
-                    Browse <input type="file" style="display: none;" name="logo">
+                    <i class="fa fa-folder"></i> <input type="file" style="display: none;" name="logo">
                     </label>
                   </div>
                 </div>
@@ -29,68 +29,68 @@
                 ?>
 
                 <div class="row">
-                	<div class="col-xs-3 col-sm-offset-1">
+                	<div class="col-sm-3 col-sm-offset-1">
                 		<label for="store-name">Tên cửa hàng:</label>                      		
                 	</div>
 
-                	<div class="col-xs-7">
+                	<div class="col-sm-7">
                 		<p><?php echo $resultContactInfo['company_name']; ?></p>         		
                 	</div>
                 </div>
 
                 <div class="row">
-                	<div class="col-xs-3 col-sm-offset-1">
+                	<div class="col-sm-3 col-sm-offset-1">
                 		<label for="address">Địa chỉ:</label>                      		
                 	</div>
 
-                	<div class="col-xs-7">
-                		<input type="text" class="form-control" name="address" id="address" value="<?php echo $resultContactInfo['address']; ?>">                    		
+                	<div class="col-sm-7">
+                		<input type="text" class="form-control" name="address" id="address" value="<?php echo $resultContactInfo['address']; ?>">                   		
                 	</div>
                 </div>
 
                 <div class="row">
-                	<div class="col-xs-3 col-sm-offset-1">
+                	<div class="col-sm-3 col-sm-offset-1">
                 		<label for="branch">Chi nhánh:</label>                      		
                 	</div>
 
-                	<div class="col-xs-7">
+                	<div class="col-sm-7">
                 		<input type="text" class="form-control" name="branch" id="branch" value="<?php echo $resultContactInfo['branch']; ?>">                    		
                 	</div>
                 </div>
 
                 <div class="row">
-                	<div class="col-xs-3 col-sm-offset-1">
+                	<div class="col-sm-3 col-sm-offset-1">
                 		<label for="phone">SĐT:</label>                      		
                 	</div>
 
-                	<div class="col-xs-7">
+                	<div class="col-sm-7">
                 		<input type="text" class="form-control" name="phone" id="phone" value="<?php echo $resultContactInfo['phone']; ?>">
                 	</div>
                 </div>
 
                 <div class="row">
-                	<div class="col-xs-3 col-sm-offset-1">
+                	<div class="col-sm-3 col-sm-offset-1">
                 		<label for="email">Email:</label>                      		
                 	</div>
 
-                	<div class="col-xs-7">
+                	<div class="col-sm-7">
                 		<input type="email" class="form-control" name="email" id="email" value="<?php echo $resultContactInfo['email']; ?>">                    		
                 	</div>
                 </div>
 
                 <div class="row">
-                	<div class="col-xs-3 col-sm-offset-1">
+                	<div class="col-sm-3 col-sm-offset-1">
                 		<label for="intro">Giới thiệu:</label>                      		
                 	</div>
 
-                	<div class="col-xs-7">
+                	<div class="col-sm-7">
                 		<textarea class="form-control" name="intro" id="intro"><?php echo $resultContactInfo['introduce']; ?></textarea>                    		
                 	</div>
                 </div>
 		
             		<div class="row">
-            			<div class="col-sm-6 col-sm-offset-4">
-                  	<button type="submit" class="btn btn-primary pull-left">Update Profile</button>
+            			<div class="col-sm-11 col-xs-12">
+                  	<button type="submit" class="btn btn-primary pull-right">Cập Nhật</button>
                   </div>
                   <div class="clearfix"></div>
                 </div>

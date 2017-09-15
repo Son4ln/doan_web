@@ -10,6 +10,7 @@
 								  send_date		date					Not null,
 								  subject		text					Not null,
 								  message		text					Not null,
+								  status		tinyint(1)              Not null,
 								  Primary key (form_id)
 								  );
 								";
