@@ -150,7 +150,15 @@
                         </a>
                     </li>
 
-                    <li>
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'contactInfo') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
                         <a href="?action=contactInfo">
                             <i class="material-icons text-gray">notifications</i>
                             <p>Thông Tin Liên Hệ</p>
