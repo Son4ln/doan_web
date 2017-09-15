@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Material Dashboard by Creative Tim</title>
+    <title>Dỗ An Shop</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -143,13 +143,6 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="icons.html">
-                            <i class="material-icons">bubble_chart</i>
-                            <p>News</p>
-                        </a>
-                    </li>
-
                     <li class="
                       <?php
                         if(isset($_GET['action'])){
@@ -164,7 +157,15 @@
                             <p>Thông Tin Liên Hệ</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'contact') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
                         <a href="?action=contact">
                             <i class="material-icons">location_on</i>
                             <p>Các Liên Hệ</p>
@@ -188,18 +189,20 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
+                            <li class="dropdown">
                                 <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="material-icons">dashboard</i>
-                                    <p class="hidden-lg hidden-md">Dashboard</p>
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                                   <i class="material-icons">person</i>
+                                   <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
                                    <p class="hidden-lg hidden-md">Profile</p>
                                 </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Sửa mật khẩu</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Đăng xuất</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
 

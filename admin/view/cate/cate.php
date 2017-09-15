@@ -30,7 +30,8 @@
                     
     	            	<td data-id="<?php echo $value['category_id']; ?>">
                     <a href="#" class="cate-name">
-                    <?php echo $value['category_name']; ?></a>
+                      <?php echo $value['category_name']; ?>
+                    </a>
                     </td>
     	            	<td>
     	            		<a href="#" class="save"><i class="fa fa-edit"></i>Lưu lại</a> | 
