@@ -95,8 +95,8 @@
                     <td class="hidden-lg hidden-md hidden-sm"><?php echo $pro['product_id']; ?></td>
                     <td class="hidden-xs"><?php echo $pro['product_name']; ?></td>
                     <td><?php echo $detail['quantity']; ?></td>
-                    <td><?php echo $pro['price']; ?></td>
-                    <td><?php echo $pro['discount']; ?></td>
+                    <td><?php echo $detail['price']; ?></td>
+                    <td><?php echo $detail['discount']; ?></td>
                     <td><?php echo $detail['detail_total']; ?></td>
                   </tr>
                   <?php
