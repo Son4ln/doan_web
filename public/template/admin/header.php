@@ -197,7 +197,7 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Sửa mật khẩu</a>
+                                        <a href="?action=updateUser">Sửa thông tin</a>
                                     </li>
                                     <li>
                                         <a href="?action=logout">Đăng xuất</a>

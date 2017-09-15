@@ -4,8 +4,11 @@
 
   //include admin model
   include $ROOT.'admin/model/AdminModel.php';
+  include $ROOT.'admin/model/Users.php';
 
   //include client model
+
+  session_start();
 
   class Order {
     function countOrder() {

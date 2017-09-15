@@ -31,6 +31,16 @@
       $login -> loginAct();
       break;
 
+    case 'updateUser':
+      $login = new Login();
+      $login -> updateUser();
+      break;
+
+    case 'updateUserAct':
+      $login = new Login();
+      $login -> updateUserAct();
+      break;
+
     case 'logout':
       session_destroy();
       $action = "login";

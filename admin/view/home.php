@@ -103,7 +103,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header" data-background-color="orange">
-            <i class="fa fa-shopping-cart"></i>
+            <i class="fa fa-phone"></i>
           </div>
 
           <div class="card-content">
@@ -184,4 +184,4 @@
   }
 </script>
 
-<?php include $GLOBALS['ROOT'].'public/template/admin/footer.php'; ?>          
+<?php include $GLOBALS['ROOT'].'public/template/admin/footer.php'; ?>

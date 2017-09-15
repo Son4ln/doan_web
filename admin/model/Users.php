@@ -1,7 +1,8 @@
 <?php
 	class UsersModel extends DataBase {
-		function updatePass() {
-			
+		function updateUser($id, $name, $pass) {
+			$query = "UPDATE users SET username = '$name', password = '$pass' WHERE user_id ='$id'";
+			parent::exec($query);
 		}
 
 		function checkUser($name, $pass) {
