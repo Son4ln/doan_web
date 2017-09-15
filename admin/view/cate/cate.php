@@ -52,7 +52,6 @@
           <div class="card">
             <div class="card-header" data-background-color="purple">
               <h4 class="title">Thêm loại sản phẩm</h4>
-              <p class="category">Hiển thị và thao tác với loại sản phẩm</p>
             </div>
 
             <div class="card-content table-responsive">
