@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
-          <div class="card-header" data-background-color="orange">
+          <div class="card-header" data-background-color="purple">
             <i class="fa fa-file-image-o"></i>
           </div>
 
@@ -24,7 +24,7 @@
 
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
-          <div class="card-header" data-background-color="orange">
+          <div class="card-header" data-background-color="purple">
             <i class="fa fa-bars"></i>
           </div>
 
@@ -43,7 +43,7 @@
 
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
-          <div class="card-header" data-background-color="orange">
+          <div class="card-header" data-background-color="purple">
             <i class="fa fa-cubes"></i>
           </div>
 
@@ -64,7 +64,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
-          <div class="card-header" data-background-color="orange">
+          <div class="card-header" data-background-color="purple">
             <i class="fa fa-shopping-cart"></i>
           </div>
 
@@ -83,7 +83,7 @@
 
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
-          <div class="card-header" data-background-color="orange">
+          <div class="card-header" data-background-color="purple">
             <i class="fa fa-shopping-cart"></i>
           </div>
 
@@ -102,7 +102,7 @@
 
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
-          <div class="card-header" data-background-color="orange">
+          <div class="card-header" data-background-color="purple">
             <i class="fa fa-phone"></i>
           </div>
 
