@@ -55,7 +55,6 @@
             </div>
 
             <div class="card-content table-responsive">
-              <div class="alert-form alert alert-danger hidden"></div>
               <form class="form-cate" method="post" action="?action=addCate">
                 <div class="form-group">
                   <label for="name">Tên loại sản phẩm</label>
@@ -63,6 +62,7 @@
                 </div>
 
                 <div class="form-group">
+                  <div class="alert-form alert alert-danger hidden"></div>
                   <button type="submit" class="btn btn-primary pull-right">Thêm</button>
                 </div>
               </form>
