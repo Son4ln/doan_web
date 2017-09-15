@@ -10,18 +10,33 @@
   //gọi function bằng cú pháp <Tên Trait>::<Tên function> thay thế cho phương thức extends
 
   // lấy action
-  if(isset($_GET["action"])){
-    $action=$_GET["action"]; }
-  elseif (isset($_POST['action']))
-  {
-    $action=$_POST["action"];
-  }
-  else{
-    $action="home";
+  $action = "login";
+  if (isset($_SESSION["doanShop-user"]) && isset($_SESSION["doanShop-pass"]) && isset($_SESSION["doanShop-canLogin"])) {
+    if($_SESSION["doanShop-canLogin"] == 1) {
+      if(isset($_GET["action"])){
+      $action = $_GET["action"]; }
+      elseif (isset($_POST['action']))
+      {
+        $action = $_POST["action"];
+      } else {
+        $action = 'home';
+      }
+    }
   }
   
   //khởi tạo action
   switch ($action) {
+    case 'login':
+      $login = new Login();
+      $login -> loginAct();
+      break;
+
+    case 'logout':
+      session_destroy();
+      $action = "login";
+      BasicLibs::redirect($action);
+      break;
+
     case 'home':
       $admin = new AdminHome();
       $admin -> showHome();

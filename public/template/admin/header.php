@@ -200,7 +200,7 @@
                                         <a href="#">Sửa mật khẩu</a>
                                     </li>
                                     <li>
-                                        <a href="#">Đăng xuất</a>
+                                        <a href="?action=logout">Đăng xuất</a>
                                     </li>
                                 </ul>
                             </li>
