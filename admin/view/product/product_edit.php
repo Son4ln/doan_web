@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php include $GLOBALS['ROOT'].'public/template/admin/header.php'; ?>
 
 <?php
@@ -332,3 +333,151 @@
 
     </script>
 <?php include $GLOBALS['ROOT'].'public/template/admin/footer.php'; ?>
+=======
+<?php include $root.'public/template/admin/header.php'; ?>
+ <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 class="page-header">Product
+                            <small>Edit</small>
+                        </h1>
+                    </div>
+                    <div class="col-xs-12">
+                        <?php echo $alert; ?>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <div class="col-lg-7" style="padding-bottom:120px">
+                        <?php
+                            $products = new ProductsModel();
+                            $result = $products -> getByIdProduct($id);
+                            $img = new ImageModel();
+                            $image = $img -> getByIdImage($result['image_id']);
+                            $cate = new CategoryModel();
+                            $category = $cate -> getAllCategory();
+                        ?>
+                        <form action="?action=productEditAction" method="POST" enctype="multipart/form-data">
+                            <input class="form-control" type="hidden" name="prodId" 
+                            value="<?php echo $result['product_id']; ?>" />
+
+                            <div class="form-group">
+                                <label>Mã</label>
+                                <input class="form-control" name="txtCode" value="<?php echo $result['product_code']; ?>" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tên sản phẩm</label>
+                                <input class="form-control" name="txtName" value="<?php echo $result['product_name']; ?>" />
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Ảnh đại diện</label>
+                                         value<input type="file" name="fImages0">
+                                        <input type="hidden"="<?php echo $result['feature_image']; ?>" name="oldImages0">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Ảnh cũ 1</label>
+                                        <img src="public/client/images/product/<?php echo $result['feature_image']; ?>" width="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Ảnh 1</label>
+                                         value<input type="file" name="fImages1">
+                                        <input type="hidden"="<?php echo $image['image1']; ?>" name="oldImages1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Ảnh cũ 1</label>
+                                        <img src="public/client/images/product/<?php echo $image['image1']; ?>" width="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Ảnh 2</label>
+                                        <input type="file" name="fImages2">
+                                        <input type="hidden" value="<?php echo $image['image2']; ?>" name="oldImages2">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Ảnh cũ 2</label>
+                                        <img src="public/client/images/product/<?php echo $image['image2']; ?>" width="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Ảnh 3</label>
+                                        <input type="file" name="fImages3">
+                                        <input type="hidden" value="<?php echo $image['image3']; ?>" name="oldImages3">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Ảnh cũ 3</label>
+                                        <img src="public/client/images/product/<?php echo $image['image3']; ?>" width="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Đơn giá</label>
+                                <input class="form-control" type="number" name="txtPrice" value="<?php echo $result['product_price']; ?>"  />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Giá giảm</label>
+                                <input class="form-control" type="number" value="<?php echo $result['product_discount']; ?>" rows="3" name="txtDiscount">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Mô tả</label>
+                                <textarea class="form-control" name="txtDesc" ><?php echo $result['product_description']; ?></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Chi tiết</label>
+                                <textarea name="txtDetail" class="form-control" rows="3">
+                                    <?php echo $result['product_detail']; ?>
+                                </textarea>
+                                <script type="text/javascript">CKEDITOR.replace('txtDetail');</script>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Loại</label>
+                                <select class="form-control" name="cateId">
+                                    <?php foreach ($category as $valueCate) {
+                                     ?>
+                                    <option
+                                    value="<?php echo  $valueCate['category_id']; ?>"
+                                        <?php
+                                            selected($result['category_id'], $valueCate['category_id']);
+                                        ?>
+                                    >
+                                    <?php echo  $valueCate['category_name']; ?>
+                                    </option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
+                            <a onclick="goback()" class="btn btn-default">Hủy</a>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    div>
+    <!-- end container -->
+<?php include $root.'public/template/admin/footer.php'; ?>
+>>>>>>> Stashed changes

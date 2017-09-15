@@ -26,6 +26,7 @@
       include '../view/home.php';
       break;
 
+<<<<<<< Updated upstream
     case 'listCate':
       $cate = new Categories();
       $cate -> listCategories();
@@ -83,6 +84,11 @@
     case 'updateStatusDetail':
       $order = new Orders();
       $order -> updateStatusDetail();
+=======
+    case 'productList':
+      include '../view/product/product_list.php';
+      break;
+>>>>>>> Stashed changes
   
     default:
       //include lỗi 404 vào đây

@@ -89,7 +89,11 @@
                         </a>
                     </li>
                     <li>
+<<<<<<< Updated upstream
                         <a href="?action=listProduct">
+=======
+                        <a href="?action=productList">
+>>>>>>> Stashed changes
                             <i class="material-icons">library_books</i>
                             <p>Products</p>
                         </a>

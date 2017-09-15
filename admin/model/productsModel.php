@@ -3,6 +3,7 @@
   * 
   */
   class ProductsModel extends DataBase {
+<<<<<<< Updated upstream
   	function getAllProducts() {
       $query = "select * from products";
       $result = parent::getList($query);
@@ -45,6 +46,42 @@
     function deleteProduct($id) {
       $query = "delete from products where product_id = '$id'";
       parent::exec($query);
+=======
+  	function getAllProducts () {
+      try{
+        $query = "select * from products";
+        $result = parent::getList($query);
+        return $result;
+      } catch(PDOException $e) {
+          $mess = 'Không tìm thấy';
+          $alertLv = 'alert-warning';
+          BasicLibs::setAlert($mess, $alertLv);
+        }
+  	}
+
+    function getAllProductsPublic () {
+      try{
+        $query = "select * from brands where product_public = 1";
+        $result = parent::getList($query);
+        return $result;
+      } catch(PDOException $e) {
+          $mess = 'Không tìm thấy';
+          $alertLv = 'alert-warning';
+          BasicLibs::setAlert($mess, $alertLv);
+        }
+    }
+
+    function getByIdProduct ($id) {
+      try{
+        $query = "select * from brands where product_id = '$id'";
+        $result = parent::getInstance($query);
+        return $result;
+      } catch(PDOException $e) {
+          $mess = 'Không tìm thấy';
+          $alertLv = 'alert-warning';
+          BasicLibs::setAlert($mess, $alertLv);
+        }
+>>>>>>> Stashed changes
     }
   }
 ?>

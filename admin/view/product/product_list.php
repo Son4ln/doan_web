@@ -1,4 +1,5 @@
 <?php include $GLOBALS['ROOT'].'public/template/admin/header.php'; ?>
+<<<<<<< Updated upstream
 
   <div class="content">
     <div class="container-fluid">
@@ -94,3 +95,100 @@
   </script>
 
 <?php include $GLOBALS['ROOT'].'public/template/admin/footer.php'; ?>
+=======
+<!-- Page Content -->
+        <style type="text/css">
+            #showMes {
+                display: none
+            }
+        </style>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 class="margin-top-md">Product
+                            <small>List</small>
+                        </h1>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="alert" id="showMes"></div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr align="center">
+                                <th>Mã</th>
+                                <th class="hidden-xs">Tên sản phẩm</th>
+                                <th class="hidden-sm hidden-xs">Hình ảnh</th>
+                                <th>Giá</th>
+                                <th class="hidden-sm hidden-xs">Giá giảm</th>
+                                <th class="hidden-xs">Loại</th>
+                                <th class="hidden-xs">Hiển thị</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $products = new ProductsModel();
+                                $data = $products -> getAllProducts();
+
+                                if (empty($data)) {
+
+                                } else {
+                                    foreach ($data as $value) {
+
+                            ?>
+                            <tr class="odd gradeX" align="center">
+                                <td rowspan="2"><?php echo $value['product_code']; ?></td>
+                                <td rowspan="2" class="hidden-xs"><?php echo $value['product_name']; ?></td>
+                                <td rowspan="2" class="hidden-sm hidden-xs">
+                                    <img src="public/images/product/<?php echo $value['featured_img']; ?>" height="50">
+                                </td>
+                                <td rowspan="2"><?php echo $value['price']; ?></td>
+                                <td rowspan="2" class="hidden-sm hidden-xs"><?php echo $value['discount']; ?></td>
+                                <td rowspan="2" class="hidden-xs"><?php
+                                        $cate = new Categories();
+                                        $result = $cate -> getByIdCategory($value['category_id']);
+                                        echo $result['category_name'];
+                                    ?>
+                                </td>
+                                <td rowspan="2"><?php
+                                        if ($value['product_public'] != 0) {
+                                            echo 'Có';
+                                        } else {
+                                            echo 'Không';
+                                        } 
+                                    ?>
+                                </td>
+                                <td class="text-center">
+                                    <i class="fa fa-trash-o  fa-fw"></i>
+                                    <a onclick="return delConfirm('Bạn có chắc muốn xóa sản phẩm này')" 
+                                    href="?action=productDel&id=<?php echo $value['product_id']; ?>"> 
+                                    Delete</a>
+                                </td>
+                                <td class="text-center">
+                                    <i class="fa fa-pencil fa-fw"></i>
+                                    <a href="?action=productEdit&id=<?php echo $value['product_id']; ?>">Edit</a>
+                                </td>
+                            </tr>
+                            <?php   }
+                                } 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- end container -->
+
+        <!-- <script>
+            $(document).ready(function() {
+                $('#dataTables-example').DataTable();
+            });
+        </script> -->
+<?php include $GLOBALS['ROOT'].'public/template/admin/footer.php'; ?>
+>>>>>>> Stashed changes

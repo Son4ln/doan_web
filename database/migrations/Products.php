@@ -5,6 +5,7 @@
 		  try {
 			$createProducts = "Create table products (
 							   product_id		int(11)		Auto_increment	Not null,
+							   product_code	    text					Not null,
 							   product_name	    text					Not null,
 							   featured_img		text					Not null,
 							   price			int(11)					Not null,

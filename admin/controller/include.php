@@ -9,10 +9,13 @@
   include $ROOT.'system/libs/basic_libs.php';
 
   //thêm các modul
+<<<<<<< Updated upstream
   include '../model/categoriesModel.php';
   include '../model/clientsModel.php';
   include '../model/imagesModel.php';
   include '../model/ordersModel.php';
+=======
+>>>>>>> Stashed changes
   include '../model/productsModel.php';
 
   //thêm controller
