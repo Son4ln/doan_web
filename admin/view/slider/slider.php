@@ -56,7 +56,7 @@
 	            					<i class="fa fa-edit"></i>Lưu lại 
 	            				</a>
                       |
-	            				<a href="?action=deleteSlide&id=<?php echo $key['slide_id']; ?>">
+	            				<a onclick="return confirm('Bạn có chắc muốn xóa')" href="?action=deleteSlide&id=<?php echo $key['slide_id']; ?>">
 	            					<i class="fa fa-trash"></i>Xóa
 	            				</a>
 	            				<div class="message"></div>

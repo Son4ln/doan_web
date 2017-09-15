@@ -66,7 +66,7 @@
 
         $delete -> deleteProduct($id);
       } catch(PDOException $e) {
-        $mess = "Xóa thất bại. Vui lòng xóa sản phẩm ở hóa đơn trước.";
+        $mess = "Xóa thất bại. Vui lòng xóa các hóa đơn liên quan trước.";
         $action = 'listProduct';
         $lv = 'danger';
         BasicLibs::setAlert($mess, $lv);
