@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   class ConnectMySql {
 
     public $database = "doan_shop";
@@ -6,7 +6,7 @@
     function createDataBase(){
       try {
 
-        $this->db = new PDO("mysql:dbname=;host=localhost", "root", "" );
+        $this->db = new PDO("mysql:dbname=;host=localhost", "root", "123" );
         $this->db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
 
         $deldb = "drop database IF EXISTS $this->database";
@@ -21,7 +21,7 @@
     }
 
     function setConnect () {
-      $this->db = new PDO("mysql:dbname=$this->database;host=localhost", "root", "" );
+      $this->db = new PDO("mysql:dbname=$this->database;host=localhost", "root", "123" );
       $this->db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
       //Error Handling
     }

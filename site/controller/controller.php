@@ -26,6 +26,15 @@
       include '../view/home.php';
       break;
 
+    case 'contact':
+      include '../view/contact/contact.php';
+      break;
+
+    case 'addContact':
+      $contact = new ContactController();
+      $contact -> addContact();
+      break;
+
     default:
       //include giao diện lỗi 404 không tìm thấy link website vào đây
       break;
