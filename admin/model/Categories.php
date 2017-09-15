@@ -20,5 +20,11 @@
     	$query = "INSERT INTO categories VALUES('', '$name')";
     	parent::exec($query);
     }
+
+    function getByIdCategory($id) {
+      $query = "select * from categories where category_id = '$id'";
+      $result = parent::getInstance($query);
+      return $result;
+    }
   }
 ?>

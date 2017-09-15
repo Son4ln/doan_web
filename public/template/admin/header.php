@@ -29,6 +29,7 @@
     <script src="../../public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="../../public/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../../public/js/material.min.js" type="text/javascript"></script>
+    <!-- <script src="../../public/js/material.min.js" type="text/javascript"></script> -->
 
     <!--  Charts Plugin -->
     <!-- <script src="../../public/js/chartist.min.js"></script> -->
@@ -74,7 +75,7 @@
                           echo 'active';
                         }
                       
-                      ?>"
+                      ?>
                     ">
                         <a href="?action=home">
                             <i class="material-icons">dashboard</i>
@@ -104,25 +105,51 @@
                              echo 'active';
                           }
                         }
-                      ?>"
+                      ?>
                     ">
                         <a href="?action=listCate">
                             <i class="fa fa-bars"></i>
                             <p>Loại Sản Phẩm</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="typography.html">
-                            <i class="material-icons">library_books</i>
-                            <p>Products</p>
+
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'listProduct' || $_GET['action'] == 'addProduct' || $_GET['action'] == 'editProduct') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
+                        <a href="?action=listProduct">
+                            <i class="fa fa-cubes"></i>
+                            <p>Sản Phẩm</p>
                         </a>
                     </li>
+
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'listOrder' || $_GET['action'] == 'orderDetail') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
+                        <a href="?action=listOrder">
+                            <i class="fa fa-shopping-cart"></i>
+                            <p>Hóa Đơn</p>
+                        </a>
+                    </li>
+
                     <li>
                         <a href="icons.html">
                             <i class="material-icons">bubble_chart</i>
                             <p>News</p>
                         </a>
                     </li>
+
                     <li>
                         <a href="maps.html">
                             <i class="material-icons">location_on</i>

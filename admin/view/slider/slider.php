@@ -16,13 +16,13 @@
 
   	  			<div class="card-content table-responsive">
   	  				<table id="slide-list" class="table table-striped table-bordered table-hover">
-  	  					<thead class="text-warning">
-		              <th>ID</th>
-		              <th>Hình ảnh</th>
-		              <th>Tiêu đề</th>
-		              <th>Mô tả ngắn</th>
-		              <th>Link to</th>
-		              <th>Thao tác</th>
+  	  					<thead class="text-primary">
+		              <th><b>ID</b></th>
+		              <th><b>Hình ảnh</b></th>
+		              <th><b>Tiêu đề</b></th>
+		              <th><b>Mô tả ngắn</b></th>
+		              <th><b>Link to</b></th>
+		              <th><b>Thao tác</b></th>
 	            	</thead>
 
 	            	<tbody>

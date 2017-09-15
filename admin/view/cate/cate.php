@@ -8,17 +8,17 @@
     	<div class="row">
     		<div class="col-lg-12 col-md-12">
     		  <div class="card">
-    		  	<div class="card-header" data-background-color="orange">
+    		  	<div class="card-header" data-background-color="purple">
     	        <h4 class="title">Danh sách loại sản phẩm</h4>
     	        <p class="category">Hiển thị và thao tác với loại sản phẩm</p>
     	      </div>
 
     	        <div class="card-content table-responsive">
     	          <table id="cate-list" class="table table-striped table-bordered table-hover">
-    	            <thead class="text-warning">
-    	              <th>ID</th>
-    	              <th>Tên</th>
-    	              <th>Thao tác</th>
+    	            <thead class="text-primary bold">
+    	              <th><b>ID</b></th>
+    	              <th><b>Tên</b></th>
+    	              <th><b>Thao tác</b></th>
     	            </thead>
 
     	            <tbody>
@@ -48,19 +48,28 @@
   	  </div>
 
   	  <div class="row">
-  	  	<div class="col-md-6 col-md-offset-3">
-  	  	  <h3 class="text-center">Thêm loại sản phẩm</h3>
-  	  	  <div class="alert-form alert alert-danger hidden"></div>
-  	  	  <form class="form-cate" method="post" action="?action=addCate">
-  		  		<div class="form-group">
-  		  			<label for="name">Tên loại sản phẩm</label>
-  		  			<input type="text" name="name" id="name" class="form-control">
-  		  		</div>
+  	  	<div class="col-md-8 col-xs-12 col-md-offset-2 col-xs-12">
+          <div class="card">
+            <div class="card-header" data-background-color="purple">
+              <h4 class="title">Thêm loại sản phẩm</h4>
+              <p class="category">Hiển thị và thao tác với loại sản phẩm</p>
+            </div>
 
-  		  		<div class="form-group">
-  		  			<button type="submit" class="btn btn-primary pull-right">Thêm</button>
-  		  		</div>
-  	  	  </form>
+            <div class="card-content table-responsive">
+              <div class="alert-form alert alert-danger hidden"></div>
+              <form class="form-cate" method="post" action="?action=addCate">
+                <div class="form-group">
+                  <label for="name">Tên loại sản phẩm</label>
+                  <input type="text" name="name" id="name" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary pull-right">Thêm</button>
+                </div>
+              </form>
+            </div>
+          </div>
+  	  	  
   	  	</div>
   	  </div>
   	</div>

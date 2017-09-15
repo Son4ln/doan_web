@@ -1560,9 +1560,9 @@ input[type="reset"]::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner,
 input[type="submit"]::-moz-focus-inner,
 select::-moz-focus-inner,
-input[type="file"] > input[type="button"]::-moz-focus-inner {
+/*input[type="file"] > input[type="button"]::-moz-focus-inner {
   outline: 0 !important;
-}
+}*/
 
 legend {
   margin-bottom: 20px;
@@ -2162,7 +2162,7 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   padding: 6px 15px 0px;
 }
 
-.form-group input[type=file] {
+/*.form-group input[type=file] {
   opacity: 0;
   position: absolute;
   top: 0;
@@ -2172,7 +2172,7 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   width: 100%;
   height: 100%;
   z-index: 100;
-}
+}*/
 
 .form-control-feedback {
   opacity: 0;

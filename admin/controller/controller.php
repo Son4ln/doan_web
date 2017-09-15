@@ -46,6 +46,61 @@
       $cate -> addCategory();
       break;
 
+    case 'listProduct':
+      $product = new Products();
+      $product -> listProducts();
+      break;
+
+    case 'addProduct':
+      $product = new Products();
+      $product -> addProduct();
+      break;
+
+    case 'editProduct':
+      $product = new Products();
+      $product -> editProduct();
+      break;
+
+    case 'deleteProduct':
+      $product = new Products();
+      $product -> deleteProduct();
+      break;
+
+    case 'actionAddProduct':
+      $product = new Products();
+      $product -> actionAddProduct();
+      break;
+
+    case 'updateProduct':
+      $product = new Products();
+      $product -> updateProduct();
+      break;
+
+    case 'listOrder':
+      $order = new Orders();
+      $order -> listOrders();
+      break;
+
+    case 'orderDetail':
+      $order = new Orders();
+      $order -> orderDetail();
+      break;
+
+    case 'deleteOrder':
+      $order = new Orders();
+      $order -> deleteOrder();
+      break;
+
+    case 'updateStatus':
+      $order = new Orders();
+      $order -> updateStatus();
+      break;
+
+    case 'updateStatusDetail':
+      $order = new Orders();
+      $order -> updateStatusDetail();
+      break;
+
     case 'listSlider':
       $slider = new Sliders();
       $slider -> listSlider();
