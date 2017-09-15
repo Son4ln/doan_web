@@ -30,6 +30,7 @@
     <!--   Core JS Files   -->
     <script src="../../public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="../../public/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../public/js/validate.js" type="text/javascript"></script>
     <!-- <script src="../../public/js/material.min.js" type="text/javascript"></script> -->
 
     <!--  Charts Plugin -->
@@ -88,7 +89,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="typography.html">
+                        <a href="?action=listProduct">
                             <i class="material-icons">library_books</i>
                             <p>Products</p>
                         </a>

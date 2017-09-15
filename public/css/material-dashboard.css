@@ -17,6 +17,10 @@
 /* ANIMATION */
 /* SHADOWS */
 /* Shadows (from mdl http://www.getmdl.io/) */
+
+.active-here {
+  border: solid 2px #9c27b0;
+}
 .noUi-target,
 .noUi-target * {
   -webkit-touch-callout: none;
@@ -1560,9 +1564,9 @@ input[type="reset"]::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner,
 input[type="submit"]::-moz-focus-inner,
 select::-moz-focus-inner,
-input[type="file"] > input[type="button"]::-moz-focus-inner {
+/*input[type="file"] > input[type="button"]::-moz-focus-inner {
   outline: 0 !important;
-}
+}*/
 
 legend {
   margin-bottom: 20px;
@@ -1575,12 +1579,12 @@ output {
   line-height: 1.42857;
 }
 
-.form-control {
+/*.form-control {
   height: 36px;
   padding: 7px 0;
   font-size: 14px;
   line-height: 1.42857;
-}
+}*/
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type="date"].form-control,
@@ -1608,7 +1612,7 @@ output {
     line-height: 44px;
   }
 }
-.radio label,
+/*.radio label,
 .checkbox label {
   min-height: 20px;
 }
@@ -1721,9 +1725,9 @@ output {
     padding-top: 4px;
     font-size: 11px;
   }
-}
+}*/
 
-.label {
+/*.label {
   border-radius: 2px;
 }
 .label, .label.label-default {
@@ -2160,9 +2164,9 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   border: 0;
   background: transparent;
   padding: 6px 15px 0px;
-}
+}*/
 
-.form-group input[type=file] {
+/*.form-group input[type=file] {
   opacity: 0;
   position: absolute;
   top: 0;
@@ -2172,9 +2176,9 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   width: 100%;
   height: 100%;
   z-index: 100;
-}
+}*/
 
-.form-control-feedback {
+/*.form-control-feedback {
   opacity: 0;
 }
 .has-success .form-control-feedback {
@@ -2214,7 +2218,7 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   width: 20%;
   margin: 9px 0 0;
 }
-
+*/
 .alert {
   border: 0;
   border-radius: 0;
@@ -3649,10 +3653,10 @@ footer .btn {
 .card .card-footer h6 {
   color: #999999;
 }
-.card img {
+/*.card img {
   width: 100%;
   height: auto;
-}
+}*/
 .card .category .material-icons {
   position: relative;
   top: 6px;
@@ -4749,7 +4753,6 @@ footer .btn {
     left: auto;
     z-index: 1032;
     visibility: visible;
-    background-color: #9A9A9A;
     overflow-y: visible;
     border-top: none;
     text-align: left;
@@ -4781,7 +4784,6 @@ footer .btn {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: #282828;
     display: block;
     content: "";
     z-index: 1;
@@ -5062,4 +5064,8 @@ footer .btn {
     margin-left: -20px;
     margin-right: -20px;
   }
+}
+
+.input-file {
+  
 }

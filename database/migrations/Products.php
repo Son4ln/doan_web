@@ -9,12 +9,10 @@
 							   featured_img		text					Not null,
 							   price			int(11)					Not null,
 							   discount		    int(11)					Null,
+							   product_description	text				Null,
 							   product_detail	text					Null,
-							   create_date		date					Not null,
-							   update_date		date					Null,
 							   product_public	tinyint(1)				Not null,
 							   category_id		int(11)					Not null,
-							   image_id		    int(11)					Not null,
 							   Primary key (product_id)
 							   );
 
