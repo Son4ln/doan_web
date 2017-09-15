@@ -1,6 +1,6 @@
 <?php
   class CateModel extends DataBase {
-    function getAllCate () {
+    function getAllCate() {
       $query = 'SELECT * FROM categories';
       $result = parent::getList($query);
       return $result;

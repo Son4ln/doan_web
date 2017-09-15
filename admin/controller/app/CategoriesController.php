@@ -18,6 +18,7 @@
         $action = "listCate";
         BasicLibs::setAlert($mess, $lv);
         BasicLibs::redirect($action);
+        die();
       }
 
   		$mess = 'Đã xóa loại sản phẩm thành công';

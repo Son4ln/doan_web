@@ -81,6 +81,22 @@
                             <p>Bảng Điều Khiển</p>
                         </a>
                     </li>
+
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'listSlider' || $_GET['action'] == 'updateImgSlide') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
+                        <a href="?action=listSlider">
+                            <i class="fa fa-file-image-o"></i>
+                            <p>Sliders</p>
+                        </a>
+                    </li>
+
                     <li class="
                       <?php
                         if(isset($_GET['action'])){
@@ -88,18 +104,11 @@
                              echo 'active';
                           }
                         }
-                      
                       ?>"
                     ">
                         <a href="?action=listCate">
                             <i class="fa fa-bars"></i>
                             <p>Loại Sản Phẩm</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="table.html">
-                            <i class="material-icons">content_paste</i>
-                            <p>Brands</p>
                         </a>
                     </li>
                     <li>

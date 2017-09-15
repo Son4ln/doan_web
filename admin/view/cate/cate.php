@@ -5,61 +5,64 @@
   	  <?php 
   	    BasicLibs::getAlert();
   	  ?>
+    	<div class="row">
+    		<div class="col-lg-12 col-md-12">
+    		  <div class="card">
+    		  	<div class="card-header" data-background-color="orange">
+    	        <h4 class="title">Danh sách loại sản phẩm</h4>
+    	        <p class="category">Hiển thị và thao tác với loại sản phẩm</p>
+    	      </div>
+
+    	        <div class="card-content table-responsive">
+    	          <table id="cate-list" class="table table-striped table-bordered table-hover">
+    	            <thead class="text-warning">
+    	              <th>ID</th>
+    	              <th>Tên</th>
+    	              <th>Thao tác</th>
+    	            </thead>
+
+    	            <tbody>
+    	              <?php
+    	                foreach ($data as $value) {
+    	              ?>
+    	              <tr>
+    	            	<td><?php echo $value['category_id']; ?></td>
+                    
+    	            	<td data-id="<?php echo $value['category_id']; ?>">
+                    <a href="#" class="cate-name">
+                    <?php echo $value['category_name']; ?></a>
+                    </td>
+
+    	            	<td>
+    	            		<a href="#" class="save"><i class="fa fa-edit"> Lưu lại</i></a> | 
+    	            		<a href="?action=deleteCate&id=<?php echo $value['category_id']; ?>"><i class="fa fa-trash"> Xóa</i></a>
+    	            		<div class="message"></div>
+    	            	</td>	
+    	              </tr>
+    	              <?php } ?>
+    	            </tbody>
+    	          </table>
+    	        </div>
+    		  </div>
+    		</div>
+  	  </div>
+
   	  <div class="row">
-		<div class="col-lg-12 col-md-12">
-		  <div class="card">
-		  	<div class="card-header" data-background-color="orange">
-	          <h4 class="title">Danh sách loại sản phẩm</h4>
-	          <p class="category">Hiển thị và thao tác với loại sản phẩm</p>
-	        </div>
+  	  	<div class="col-md-6 col-md-offset-3">
+  	  	  <h3 class="text-center">Thêm loại sản phẩm</h3>
+  	  	  <div class="alert-form alert alert-danger hidden"></div>
+  	  	  <form class="form-cate" method="post" action="?action=addCate">
+  		  		<div class="form-group">
+  		  			<label for="name">Tên loại sản phẩm</label>
+  		  			<input type="text" name="name" id="name" class="form-control">
+  		  		</div>
 
-	        <div class="card-content table-responsive">
-	          <table id="cate-list" class="table table-striped table-bordered table-hover">
-	            <thead class="text-warning">
-	              <th>ID</th>
-	              <th>Tên</th>
-	              <th>Thao tác</th>
-	            </thead>
-
-	            <tbody>
-	              <?php
-	                foreach ($data as $value) {
-	              ?>
-	              <tr>
-	            	<td><?php echo $value['category_id']; ?></td>
-	            	<td data-id="<?php echo $value['category_id']; ?>"><a href="#" class="cate-name"><?php echo $value['category_name']; ?></a></td>
-	            	<td>
-	            		<a href="#" class="save"><i class="fa fa-edit"> Lưu lại</i></a> | 
-	            		<a href="?action=deleteCate&id=<?php echo $value['category_id']; ?>"><i class="fa fa-trash"> Xóa</i></a>
-	            		<div class="message">
-		  					
-		  				</div>
-	            	</td>	
-	              </tr>
-	              <?php } ?>
-	            </tbody>
-	          </table>
-	        </div>
-		  </div>
-		</div>
-	  </div>
-
-	  <div class="row">
-	  	<div class="col-md-6 col-md-offset-3">
-	  	  <h3 class="text-center">Thêm loại sản phẩm</h3>
-	  	  <div class="alert-form alert alert-danger hidden"></div>
-	  	  <form class="form-cate" method="post" action="?action=addCate">
-		  		<div class="form-group">
-		  			<label for="name">Tên loại sản phẩm</label>
-		  			<input type="text" name="name" id="name" class="form-control">
-		  		</div>
-
-		  		<div class="form-group">
-		  			<button type="submit" class="btn btn-primary pull-right">Thêm</button>
-		  		</div>
-	  	  </form>
-	  	</div>
-	  </div>
+  		  		<div class="form-group">
+  		  			<button type="submit" class="btn btn-primary pull-right">Thêm</button>
+  		  		</div>
+  	  	  </form>
+  	  	</div>
+  	  </div>
   	</div>
   </div>
 
@@ -67,6 +70,9 @@
   	$(document).ready(function() {
       $('#cate-list').DataTable();
       $('.cate-name').editable();
+      $('.cate-name').editable('option', 'validate', function(v) {
+        if(!v) return 'Không được để trống';
+      });
   	});
 
   	let save = document.querySelectorAll('.save');

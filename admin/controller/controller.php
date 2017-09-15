@@ -45,6 +45,36 @@
       $cate = new Categories();
       $cate -> addCategory();
       break;
+
+    case 'listSlider':
+      $slider = new Sliders();
+      $slider -> listSlider();
+      break;
+
+    case 'deleteSlide':
+      $slider = new Sliders();
+      $slider -> delSlider();
+      break;
+
+    case 'updateSlider':
+      $slider = new Sliders();
+      $slider -> updateSlider();
+      break;
+
+    case 'updateImgSlide':
+      $slider = new Sliders();
+      $slider -> updateImg();
+      break;
+
+    case 'updateImgSlideAct':
+      $slider = new Sliders();
+      $slider -> updateImgAct();
+      break;
+
+    case 'addSlide':
+      $slider = new Sliders();
+      $slider -> addSlider();
+      break;
   
     default:
       //include lỗi 404 vào đây

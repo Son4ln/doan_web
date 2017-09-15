@@ -10,8 +10,10 @@
 
   //thêm các modul
   include '../model/Categories.php';
+  include '../model/Sliders.php';
 
   //thêm controller
   include 'app/CategoriesController.php';
+  include 'app/SlidersController.php';
  
 ?>
