@@ -19,16 +19,16 @@
                 BasicLibs::getAlert();
               ?>
 
-              <form enctype="multipart/form-data" method="post" action="?action=updateProduct"> 
+              <form enctype="multipart/form-data" method="post" action="?action=updateProduct" id="edit-pro"> 
                 <input type="hidden" name="id" value="<?php echo $result['product_id']; ?>">
                 <div class="row">
                   <div class="col-md-7 col-md-offset-1 col-xs-12">
-                    <center><img id="review-img" src="../../upload/products/<?php echo $result['featured_img']; ?>" width="150"></center>
+                    <center><img id="review-img" src="../../upload/products/<?php echo $result['featured_img']; ?>" width="100"></center>
                     <input type="hidden" name="current-img" value="<?php echo $result['featured_img']; ?>">
                     <div class="row">
                       <div class="col-xs-8 col-xs-offset-2 text-center">
                         <label class="btn btn-file btn-primary">
-                        <i class="fa fa-folder"></i> <input class="change-input" type="file" style="display: none;" name="feature">
+                        <i class="fa fa-folder"></i> <input class="change-input" type="file" style="display: none;" name="feature" id="feature">
                         </label>
 
                         <button type="button" class="btn btn-primary" id="clear-img"><i class="fa fa-times"></i></button>
@@ -87,7 +87,7 @@
 
                       <div class="col-xs-6">
                         <textarea class="form-control change-input" name="description" id="description"
-                        value="<?php echo $result['product_description']; ?>"></textarea>
+                        value=""><?php echo $result['product_description']; ?></textarea>
                       </div>
 
                       <div class="col-xs-2 hidden">
@@ -102,7 +102,7 @@
 
                       <div class="col-xs-6">
                         <textarea class="form-control change-input" name="detail" id="detail"
-                        value="<?php echo $result['product_detail']; ?>"></textarea>                       
+                        value=""><?php echo $result['product_detail']; ?></textarea>                       
                       </div>
 
                       <div class="col-xs-2 hidden">
@@ -112,11 +112,11 @@
 
                     <div class="row form-group">
                       <div class="col-xs-3 col-sm-offset-1">
-                        <label for="slogan">Hiển thị:</label>                          
+                        <label for="public">Hiển thị:</label>                          
                       </div>
 
                       <div class="col-xs-6">
-                        <select class="form-control change-input" name="public">
+                        <select class="form-control change-input" name="public" id="public">
                           <option value="0" <?php if ($result['product_public'] == 0) { echo 'selected="selected"';} ?>>Không</option>
                           <option value="1" <?php if ($result['product_public'] == 1) { echo 'selected="selected"';} ?>>Có</option>
                         </select>                    
@@ -161,43 +161,11 @@
                   </div>
 
                   <div class="col-md-3 col-xs-12">
-                    <!-- <div class="" style="height: 200px">
-                    </div>
-
-                    <?php
-                      $image = new ImagesModel();
-                      $db = $image -> getAllByIdImages($result['product_id']);
-                      $count = 0;
-                      foreach ($db as $img) {
-                        $count += 1;
-                    ?>
-                      <center>
-                        <img id="review-img" src="../../upload/products/<?php echo $img['image']; ?>" width="100"
-                        class="margin-bottom-sm">
-                      </center>
-
-                      <p><b>Ảnh phụ <?php echo $count;?>:</b>
-                        <a><i class="fa fa-edit"> Sửa</i>
-                          <input class="change-input" type="file" style="display: none;"
-                          name="image<?php echo $count;?>">
-                        </a> | 
-                        <a onclick="return confirm('Bạn có chắc muốn xóa hình ảnh này')" 
-                          id="clear-img<?php echo $count;?>"> 
-                          <i class="fa fa-trash"> Xóa</i></a>
-                      </p>
-                    <?php
-                      }
-                    ?>
-
-                    <div class="row">
-                      <div class="col-xs-12 text-center">
-                        <label class="btn btn-file btn-primary">
-                        Thêm ảnh phụ<input class="change-input" type="file" style="display: none;" name="image1">
-                        </label>
-                      </div>
-                    </div> -->
+                    
                   </div>
                 </div>
+
+                <div id="message" class="alert alert-danger hidden"></div>
             
                 <div class="row form-group">
                   <div class="col-sm-6 col-sm-offset-4">
@@ -330,5 +298,54 @@
         }
       },500);
 
+      let editPro = document.getElementById('edit-pro');
+      editPro.addEventListener('submit', (e) => {
+        let message = document.getElementById('message');
+        let imgFile = document.getElementById('feature');
+        let name = document.querySelector('[name="name"]').value.trim();
+        let price = document.querySelector('[name="price"]').value;
+        let discount = document.querySelector('[name="discount"]').value;
+        let description = document.querySelector('[name="description"]').value.trim();
+        let html = [];
+
+        if(imgFile.value != '') {
+          let imgExt = imgFile.files[0].type;
+          if (imgExt != 'image/png' && imgExt != 'image/jpg' && imgExt != 'image/jpeg') {
+            let content = 'Chỉ hỗ trợ ảnh png, jpg, jpeg';
+            html.push(content);
+          }
+        }
+
+        if (name == '') {
+          let content = 'Tên sản phẩm không được để trống';
+          html.push(content);
+        }
+
+        if (price == '' || price <= 0) {
+          let content = 'Giá sản phẩm không được để trống và lớn hơn 0';
+          html.push(content);
+        }
+
+        if (discount < 0) {
+          let content = 'Giá giảm phải lớn hơn 0';
+          html.push(content);
+        }
+
+        if (description == '') {
+          let content = 'Mô tả sản phẩm không được để trống';
+          html.push(content);
+        }
+
+        if (html.length > 0) {
+          let mess = '';
+          e.preventDefault();
+          message.classList.remove('hidden');
+          for(let showMess of html) {
+            let alert = `<p>${showMess}</p>`;
+            mess += alert;
+          }
+          message.innerHTML = mess;
+        }
+      });
     </script>
 <?php include $GLOBALS['ROOT'].'public/template/admin/footer.php'; ?>
