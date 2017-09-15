@@ -18,6 +18,7 @@
   include '../model/Sliders.php';
   include '../model/ContactInfoModel.php';
   include '../model/ContactModel.php';
+  include '../model/Users.php';
   
   //thêm controller
   include 'app/HomeController.php';
@@ -27,5 +28,5 @@
   include 'app/ContactInfoController.php';
   include 'app/ContactController.php';
   include 'app/SlidersController.php';
-
+  include 'app/LoginController.php';
 ?>
