@@ -39,12 +39,21 @@
       if (!empty($_POST['name'])) {
         $name = $_POST['name'];
         $cate = new CateModel();
-        $cate -> addCate($name);
-        $mess = 'Đã thêm loại sản phẩm thành công';
-        $lv = 'success';
-        $action = "listCate";
-        BasicLibs::setAlert($mess, $lv);
-        BasicLibs::redirect($action);
+        $check = $cate -> getCateByName($name);
+        if ($check[0] == 0) {
+          $cate -> addCate($name);
+          $mess = 'Đã thêm loại sản phẩm thành công';
+          $lv = 'success';
+          $action = "listCate";
+          BasicLibs::setAlert($mess, $lv);
+          BasicLibs::redirect($action);
+        } else {
+          $mess = 'Loại sản phẩm này đã tồn tại';
+          $lv = 'danger';
+          $action = "listCate";
+          BasicLibs::setAlert($mess, $lv);
+          BasicLibs::redirect($action);
+        }
       } else {
         echo 'Something wrong here';
       }

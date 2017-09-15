@@ -107,7 +107,7 @@
           </div>
 
           <div class="card-content">
-            <p class="category">Liên hệ</p>
+            <p class="category">Liên hệ mới</p>
             <h3 class="title contact-form"></h3>
           </div>
 
@@ -175,7 +175,7 @@
       dataType: 'text',
       data: {},
       success: function(result) {
-        contactForm.innerHTML = `${result} <small>Liên hệ</small>`;
+        contactForm.innerHTML = `${result} <small>Liên hệ mới</small>`;
       },
       error: function (result) {
 

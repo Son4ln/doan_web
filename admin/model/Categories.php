@@ -26,5 +26,11 @@
       $result = parent::getInstance($query);
       return $result;
     }
+
+    function getCateByName ($name) {
+      $query = "SELECT COUNT(*) FROM categories WHERE category_name = '$name'";
+      $result = parent::getInstance($query);
+      return $result;
+    }
   }
 ?>

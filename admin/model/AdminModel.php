@@ -31,7 +31,7 @@
 		}
 
 		function countContactForm() {
-			$query = 'SELECT COUNT(*) FROM contact_form';
+			$query = 'SELECT COUNT(*) FROM contact_form WHERE status = 0';
 			$result = parent::getInstance($query);
       return $result;
 		}

@@ -28,7 +28,7 @@
         $contact = new Contact();
         $contact -> countContactForm();
         break;
-
+        
       default:
       break;
     }
