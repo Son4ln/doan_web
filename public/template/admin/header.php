@@ -75,13 +75,29 @@
                           echo 'active';
                         }
                       
-                      ?>"
+                      ?>
                     ">
                         <a href="?action=home">
                             <i class="material-icons">dashboard</i>
                             <p>Bảng Điều Khiển</p>
                         </a>
                     </li>
+
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'listSlider' || $_GET['action'] == 'updateImgSlide') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
+                        <a href="?action=listSlider">
+                            <i class="fa fa-file-image-o"></i>
+                            <p>Sliders</p>
+                        </a>
+                    </li>
+
                     <li class="
                       <?php
                         if(isset($_GET['action'])){
@@ -89,32 +105,51 @@
                              echo 'active';
                           }
                         }
-                      
-                      ?>"
+                      ?>
                     ">
                         <a href="?action=listCate">
                             <i class="fa fa-bars"></i>
                             <p>Loại Sản Phẩm</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="table.html">
-                            <i class="material-icons">content_paste</i>
-                            <p>Brands</p>
-                        </a>
-                    </li>
-                    <li>
+
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'listProduct' || $_GET['action'] == 'addProduct' || $_GET['action'] == 'editProduct') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
                         <a href="?action=listProduct">
-                            <i class="material-icons">library_books</i>
-                            <p>Products</p>
+                            <i class="fa fa-cubes"></i>
+                            <p>Sản Phẩm</p>
                         </a>
                     </li>
+
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'listOrder' || $_GET['action'] == 'orderDetail') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
+                        <a href="?action=listOrder">
+                            <i class="fa fa-shopping-cart"></i>
+                            <p>Hóa Đơn</p>
+                        </a>
+                    </li>
+
                     <li>
                         <a href="icons.html">
                             <i class="material-icons">bubble_chart</i>
                             <p>News</p>
                         </a>
                     </li>
+
                     <li>
                         <a href="maps.html">
                             <i class="material-icons">location_on</i>

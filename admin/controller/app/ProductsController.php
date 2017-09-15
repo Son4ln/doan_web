@@ -16,8 +16,10 @@
     function actionAddProduct() {
       $path = $GLOBALS['UPLOADPRODUCT'];
 
+      $time = time();
+
       $name = $_POST['name'];
-      $img = time().'-'.$_FILES['feature']['name'];
+      $img = $time.'-'.$_FILES['feature']['name'];
       $price = $_POST['price'];
       $discount = $_POST['discount'];
       $description = $_POST['description'];
@@ -38,7 +40,7 @@
       }
 
       $fileLogo = $_FILES['feature'];
-      BasicLibs::uploadFile($fileLogo, $path);
+      BasicLibs::uploadFile($time, $fileLogo, $path);
 
       $mess = "Thêm thành công";
       $action = 'listProduct';
@@ -82,11 +84,12 @@
     function updateProduct() {
       $id = $_POST['id'];
       $path = $GLOBALS['UPLOADPRODUCT'];
+      $time = time();
 
       if(empty($_FILES['feature']['name'])){
         $img = $_POST['current-img'];
       } else {
-        $img = time().'-'.$_FILES['feature']['name'];
+        $img = $time.'-'.$_FILES['feature']['name'];
       }
 
       $name = $_POST['name'];
@@ -113,7 +116,7 @@
         $currentImg = $_POST['current-img'];
         BasicLibs::deleteFile($currentImg,$path);
         $fileLogo = $_FILES['feature'];
-        BasicLibs::uploadFile($fileLogo, $path);
+        BasicLibs::uploadFile($time, $fileLogo, $path);
       }
 
       $mess = "Sửa thành công";

@@ -68,7 +68,7 @@
         $action = 'orderDetail';
         $lv = 'danger';
         BasicLibs::setAlert($mess, $lv);
-        BasicLibs::redirect($action);
+        BasicLibs::redirectId($action, $id);
         die();
       }
 
@@ -76,7 +76,7 @@
       $action = 'orderDetail';
       $lv = 'success';
       BasicLibs::setAlert($mess, $lv);
-      BasicLibs::redirect($action);
+      BasicLibs::redirectId($action, $id);
     }
   }
 ?>

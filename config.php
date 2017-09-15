@@ -4,4 +4,5 @@
   $ROOT = getenv('DOCUMENT_ROOT').'/doan_web/';
   $UPLOADIMG = $ROOT.'upload';
   $UPLOADPRODUCT = $ROOT.'upload/products/';
+  $UPLOADSLIDE = $ROOT.'/upload/sliders/';
 ?>
