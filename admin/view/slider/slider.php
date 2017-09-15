@@ -53,11 +53,11 @@
 
 	            			<td>
 	            				<a href="#" class="save">
-	            					<i class="fa fa-edit"> Lưu lại |</i>
+	            					<i class="fa fa-edit"></i>Lưu lại 
 	            				</a>
-
+                      |
 	            				<a href="?action=deleteSlide&id=<?php echo $key['slide_id']; ?>">
-	            					<i class="fa fa-trash"> Xóa</i>
+	            					<i class="fa fa-trash"></i>Xóa
 	            				</a>
 	            				<div class="message"></div>
 	            			</td>

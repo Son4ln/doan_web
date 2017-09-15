@@ -165,6 +165,16 @@
       $contact = new ContactController();
       $contact -> deleteContact();
       break;
+
+    case 'updateContactDetail':
+      $contact = new ContactController();
+      $contact -> updateContactDetail();
+      break;
+
+    case 'contactDetail':
+      $contact = new ContactController();
+      $contact -> contactDetail();
+      break;
   
     default:
       //include lỗi 404 vào đây

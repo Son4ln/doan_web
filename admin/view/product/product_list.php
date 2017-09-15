@@ -69,10 +69,10 @@
                     </td>
                     <td class="text-center">
                       <a href="?action=editProduct&id=<?php echo $value['product_id']; ?>">
-                      <i class="fa fa-edit"> Sửa</i> </a> | 
+                      <i class="fa fa-edit"></i> Sửa</a> | 
                       <a onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này')" 
                       href="?action=deleteProduct&id=<?php echo $value['product_id']; ?>"> 
-                      <i class="fa fa-trash"> Xóa</i></a>
+                      <i class="fa fa-trash"></i> Xóa</a>
                     </td>
                   </tr>
                   <?php }

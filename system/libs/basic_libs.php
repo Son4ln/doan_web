@@ -26,6 +26,10 @@
       header("location:?action=$action&id=$id");
     }
 
+    function formId($action, $id){
+      header("location:?action=$action&form_id=$id");
+    }
+
     // set alert message
     function setAlert($mes, $alertLv) {
       $_SESSION['rwMessage'] = $mes;
