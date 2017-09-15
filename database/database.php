@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   class DataBase {
             // Khởi tạo thuộc tính cho lớp connect
     var $db=null;

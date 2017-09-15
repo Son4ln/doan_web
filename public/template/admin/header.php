@@ -150,16 +150,24 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="maps.html">
-                            <i class="material-icons">location_on</i>
-                            <p>About</p>
+                    <li class="
+                      <?php
+                        if(isset($_GET['action'])){
+                          if ($_GET['action'] == 'contactInfo') {
+                             echo 'active';
+                          }
+                        }
+                      ?>
+                    ">
+                        <a href="?action=contactInfo">
+                            <i class="material-icons text-gray">notifications</i>
+                            <p>Thông Tin Liên Hệ</p>
                         </a>
                     </li>
                     <li>
-                        <a href="notifications.html">
-                            <i class="material-icons text-gray">notifications</i>
-                            <p>Contact</p>
+                        <a href="?action=contact">
+                            <i class="material-icons">location_on</i>
+                            <p>Các Liên Hệ</p>
                         </a>
                     </li>
                 </ul>

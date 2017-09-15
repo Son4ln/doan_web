@@ -129,6 +129,25 @@
     case 'addSlide':
       $slider = new Sliders();
       $slider -> addSlider();
+
+    case 'contactInfo':
+      $contactInfo = new ContactInfoController();
+      $contactInfo -> showContactInfo();
+      break;
+
+    case 'updateContactInfo':
+      $contactInfo = new ContactInfoController();
+      $contactInfo -> updateContactInfo();
+      break;
+
+    case 'contact':
+      $contact = new ContactController();
+      $contact -> showContact();
+      break;
+
+    case 'deleteContact':
+      $contact = new ContactController();
+      $contact -> deleteContact();
       break;
   
     default:

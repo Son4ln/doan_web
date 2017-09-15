@@ -10,8 +10,10 @@
 
   //thêm các modul
   include '../model/brandsModel.php';
+  include '../model/contactModel.php';
 
   //thêm controller
   include 'app/brandsController.php';
+  include 'app/contactController.php';
  
 ?>

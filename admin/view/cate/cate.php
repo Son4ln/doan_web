@@ -32,10 +32,9 @@
                     <a href="#" class="cate-name">
                     <?php echo $value['category_name']; ?></a>
                     </td>
-
     	            	<td>
-    	            		<a href="#" class="save"><i class="fa fa-edit"> Lưu lại</i></a> | 
-    	            		<a href="?action=deleteCate&id=<?php echo $value['category_id']; ?>"><i class="fa fa-trash"> Xóa</i></a>
+    	            		<a href="#" class="save"><i class="fa fa-edit"></i>Lưu lại</a> | 
+                      <a href="?action=deleteCate&id=<?php echo $value['category_id']; ?>"><i class="fa fa-trash"></i>Xóa</a>
     	            		<div class="message"></div>
     	            	</td>	
     	              </tr>
