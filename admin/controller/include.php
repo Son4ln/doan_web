@@ -15,11 +15,15 @@
   include '../model/ordersModel.php';
   include '../model/productsModel.php';
   include '../model/Sliders.php';
-
+  include '../model/ContactInfoModel.php';
+  include '../model/ContactModel.php';
+  
   //thêm controller
   include 'app/CategoriesController.php';
   include 'app/OrdersController.php';
   include 'app/ProductsController.php';
+  include 'app/ContactInfoController.php';
+  include 'app/ContactController.php';
   include 'app/SlidersController.php';
- 
+
 ?>
