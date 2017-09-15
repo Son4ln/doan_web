@@ -2,8 +2,8 @@
   trait BasicLibs {
 
     // upload file
-    function uploadFile($file,$path){
-      $fileName = time().'-'.$file['name'];
+    function uploadFile($time,$file,$path){
+      $fileName = $time.'-'.$file['name'];
       $source = $file['tmp_name'];
       $target = $path.DIRECTORY_SEPARATOR.$fileName;
       move_uploaded_file($source, $target);
