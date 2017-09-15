@@ -171,11 +171,11 @@
                     </li>
 
                     <li class="dropdown">
-                      <a href="?action=product">Sản Phẩm</a>
+                      <a href="?action=contact">Liên Hệ</a>                   
                     </li>
 
                     <li class="dropdown">
-                      <a href="?action=contact">Liên Hệ</a>                   
+                      <a href="?action=product">Sản Phẩm</a>
                     </li>
 
                     <li class="dropdown">
