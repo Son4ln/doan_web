@@ -59,10 +59,10 @@
                     <td class="text-primary"><b>Tình trạng:</b></td>
                     <td>
                       <?php if ($value['order_status'] == 1) {?>
-                        <a onclick="return delConfirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
+                        <a onclick="return confirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
                         href="?action=updateStatusDetail&id=<?php echo $value['order_id']; ?>&status=0"><b>Đã nhận hàng</b></a>
                       <?php } else { ?>
-                        <a onclick="return delConfirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
+                        <a onclick="return confirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
                         href="?action=updateStatusDetail&id=<?php echo $value['order_id']; ?>&status=1">
                         <b style="color: red">Chưa nhận hàng</b></a>
                       <?php } ?>

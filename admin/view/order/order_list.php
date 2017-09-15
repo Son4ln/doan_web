@@ -48,10 +48,10 @@
                     <td><?php echo $value['total']; ?></td>
                     <td class="hidden-xs">
                         <?php if ($value['order_status'] == 1) {?>
-                          <a onclick="return delConfirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
+                          <a onclick="return confirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
                           href="?action=updateStatus&id=<?php echo $value['order_id']; ?>&status=0"><b>Đã nhận hàng</b></a>
                         <?php } else { ?>
-                          <a onclick="return delConfirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
+                          <a onclick="return confirm ('Bạn có chắc muốn chỉnh sửa trạng thái');"
                           href="?action=updateStatus&id=<?php echo $value['order_id']; ?>&status=1">
                           <b style="color: red">Chưa nhận hàng</b></a>
                         <?php } ?>
