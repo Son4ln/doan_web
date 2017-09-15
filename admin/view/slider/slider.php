@@ -142,9 +142,9 @@
   			let td = saveSlide.parentElement;
   			let tr = td.parentElement;
   			let id = tr.children[0].textContent;
-  			let title = tr.children[2].textContent;
-  			let desc = tr.children[3].textContent;
-  			let link = tr.children[4].textContent;
+  			let title = tr.children[2].children[0].textContent;
+  			let desc = tr.children[3].children[0].textContent;
+  			let link = tr.children[4].children[0].textContent;
   			let tdSave = tr.children[5];
   			let message = tdSave.children[2];
   			message.innerHTML = '<span style="font-size: 13px" class="fa fa-spinner fa-pulse fa-3x fa-f"></span>';

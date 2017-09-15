@@ -14,14 +14,19 @@
   if ($verb == 'GET') {
     //tạo link api với phương thức get
     switch ($url) {
-      case 'brandById':
-        $brand = new BrandById();
-        $brand -> get();
+      case 'countOrder':
+        $order = new Order();
+        $order -> countOrder();
         break;
 
-      case 'brandByName':
-        $brand = new BrandByName();
-        $brand -> get();
+      case 'countNewOrder':
+        $order = new Order();
+        $order -> countNewOrder();
+        break;
+
+      case 'countContactForm':
+        $contact = new Contact();
+        $contact -> countContactForm();
         break;
 
       default:
@@ -44,8 +49,8 @@
   } elseif ($verb == 'PUT') {
       //tạo link api với phương thức Put
       switch ($url) {
-        case 'brand':
-           echo "put";
+        case '':
+      
         break;
 
         default:
@@ -56,8 +61,8 @@
   } elseif ($verb == 'DELETE') {
       //tạo link api với phương thức DELETE
       switch ($url) {
-        case 'brand':
-           echo "Delete";
+        case '':
+           
         break;
 
         default:

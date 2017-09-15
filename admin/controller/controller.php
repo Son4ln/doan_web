@@ -23,7 +23,8 @@
   //khởi tạo action
   switch ($action) {
     case 'home':
-      include '../view/home.php';
+      $admin = new AdminHome();
+      $admin -> showHome();
       break;
 
     case 'listCate':
