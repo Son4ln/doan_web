@@ -88,8 +88,16 @@
                       }
                     ?>
                     <div class="product-actions">
-                      <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                      <i class="fa fa-exchange"></i></a>
+                      <a id="cart" class="product-add-to-compare add-cart" data-toggle="tooltip" data-placement="bottom" 
+                      title="Thêm vào giỏ hảng" data-id="<?php echo $value['product_id']; ?>" data-name="<?php echo $value['product_name']; ?>" data-img="<?php echo $value['featured_img']; ?>"
+                      data-price="<?php 
+                        if ($value['discount']) {
+                          echo $value['discount'];
+                        } else {
+                          echo $value['price'];
+                        }
+                      ?>">
+                      <i class="fa fa-shopping-cart"></i></a>
                       <p><?php echo $value['product_description']; ?></p>                 
                     </div>
 
@@ -175,8 +183,16 @@
                       }
                     ?>
                     <div class="product-actions">
-                      <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                      <i class="fa fa-exchange"></i></a>
+                      <a id="cart" class="product-add-to-compare add-cart" data-toggle="tooltip" data-placement="bottom" 
+                      title="Thêm vào giỏ hảng" data-id="<?php echo $value['product_id']; ?>" data-name="<?php echo $value['product_name']; ?>" data-img="<?php echo $value['featured_img']; ?>"
+                      data-price="<?php 
+                        if ($value['discount']) {
+                          echo $value['discount'];
+                        } else {
+                          echo $value['price'];
+                        }
+                      ?>">
+                      <i class="fa fa-shopping-cart"></i></a>
                       <p><?php echo $value['product_description']; ?></p>                 
                     </div>
 
