@@ -21,9 +21,27 @@
   //khởi tạo action
   switch ($action) {
     case 'home':
-      $brands = new BrandsController();
-      $brands -> getBrands();
       include '../view/home.php';
+      break;
+
+    case 'login':
+      include '../view/login/login.php';
+      break;
+
+    case 'productList':
+      include '../view/product/productList.php';
+      break;
+
+    case 'productDetail':
+      include '../view/product/productDetail.php';
+      break;
+
+    case 'cart':
+      include '../view/cart/cart.php';
+      break;
+
+    case 'checkout':
+      include '../view/cart/checkout.php';
       break;
 
     case 'contact':

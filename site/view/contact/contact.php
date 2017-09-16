@@ -1,37 +1,110 @@
 <?php include $ROOT.'public/template/site/header.php' ?>
-	<div class="row">
-  	  	<div class="col-md-8 col-xs-12 col-md-offset-2 col-xs-12">
-          <div class="card">
-            <div class="card-content table-responsive">
-              <div class="alert-form alert alert-danger hidden"></div>
-              <form class="form-cate" method="post" action="?action=addContact">
-				<div class="form-group">
-					<label for="name">Tên người gửi</label>
-					<input type="text" name="full_name" id="name" class="form-control">
-				</div>
 
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" name="email" id="email" class="form-control">
-				</div>
+<!-- Breadcrumbs -->
+<div class="container">
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="#">Pages</a>
+    </li>
+    <li class="active">
+      Contact
+    </li>
+  </ol> <!-- end breadcrumbs -->
+</div>
 
-				<div class="form-group">
-					<label for="subject">Vấn đề</label>
-					<input type="text" name="subject" id="subject" class="form-control">
-				</div>
+<!-- Contact -->
+<section class="section-wrap contact">
+  <div class="container">
+    <div class="row">
 
-				<div class="form-group">
-					<label for="content">Nội dung</label>
-					<input type="text" name="message" id="content" class="form-control">
-				</div>
-
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary pull-right">Thêm</button>
-				</div>
-			</form>
-            </div>
+      <div class="col-md-8">
+        <h5 class="uppercase mb-30">Send Us Message</h5>
+        <?php
+            BasicLibs::getAlert();
+        ?>
+        <form id="contact-form" action="?action=addContact" method="post">
+          <div id="message" class="alert alert-danger hidden"></div>          
+          <div class="contact-name">
+            <input name="full_name" id="name" type="text" placeholder="Name*">
           </div>
-  	  	  
-  	  	</div>
-  	  </div>
+          <div class="contact-email">
+            <input name="email" id="mail" type="email" placeholder="E-mail*">
+          </div>
+          <div class="contact-subject">
+            <input name="subject" id="subject" type="text" placeholder="Subject">
+          </div>                
+
+          <textarea name="message" id="message" placeholder="Message" rows="9"></textarea>
+          <button type="submit" class="btn btn-lg btn-color btn-submit">Submit</button>              
+        </form>
+      </div> <!-- end col -->
+
+      <div class="col-md-4 mb-40 mt-mdm-40 contact-info">
+
+        <div class="address-wrap">
+          <h4 class="uppercase">Address</h4>
+          <h6>Philippines Store</h6>
+          <address class="address">Philippines, PO Box 620067, Talay st. 66, A-ha inc.</address>
+          <h6>Canada Store</h6>
+          <address class="address">A-ha inc, 10-123 Main st. NW, Montreal QC, H3Z2Y7</address>
+        </div>
+
+        <h4 class="uppercase">Contact Info</h4>
+        <ul class="contact-info-list">
+          <li><span>Phone: </span><a href="tel:+1-888-1554-456-123">+ 1-888-1554-456-123</a></li>
+          <li><span>Email: </span><a href="mailto:themesupport@gmail.com" class="sliding-link">themesupport@gmail.com</a></li>
+          <li><span>Skype: </span><a href="#">ahasupport</a></li>
+        </ul>
+      </div>          
+
+    </div>
+  </div>
+</section> <!-- end contact -->
+
+<script type="text/javascript">
+  let sendContact = document.getElementById('contact-form');
+  sendContact.addEventListener('submit', (e) => {
+    let mes = document.getElementById('message');
+    let full_name = document.querySelector('[name="full_name"]').value.trim();
+    let email = document.querySelector('[name="email"]').value.trim();
+    let subject = document.querySelector('[name="subject"]').value.trim();
+    let message = document.querySelector('[name="message"]').value.trim();
+    let html = [];
+
+    if (full_name == '') {
+      let content = '-Không bỏ trống tên người nhập';
+      html.push(content);
+    }
+
+    if (email == '') {
+      let content = '-Không bỏ trống email & phải nhập đúng cú pháp';
+      html.push(content);
+    }
+
+    if (subject == '') {
+      let content = '-Không bỏ trống tiêu đề';
+      html.push(content);
+    }
+
+    if (message == '') {
+      let content = '-Không bỏ trống nội dung';
+      html.push(content);
+    }
+
+    if (html.length > 0) {
+      let mess = '';
+      e.preventDefault();
+      mes.classList.remove('hidden');
+      for(let showMess of html) {
+        let alert = `<p>${showMess}</p>`;
+        mess += alert;
+      }
+      mes.innerHTML = mess;
+    }
+  });
+</script>
+
 <?php include $ROOT.'public/template/site/footer.php' ?>   
