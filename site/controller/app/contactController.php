@@ -9,7 +9,7 @@
 
       $contact = new ContactModel();
       try {
-        $contact -> addContact($full_name, $email, $send_date, $subject, $message);
+        $contact -> addContact($full_name, $email, $subject, $message);
       } catch(PDOException $e) {
         $mess = "Gửi thất bại";
         $action = 'contact';
