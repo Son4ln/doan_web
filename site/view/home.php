@@ -1,4 +1,4 @@
-<?php include $ROOT.'public/template/site/header.php' ?>
+<?php include $GLOBALS['ROOT'].'public/template/site/header.php' ?>
 
 <!-- Hero Slider -->
     <section class="section-wrap nopadding">
@@ -67,131 +67,74 @@
           </div>
         </div>
 
-        <div class="row row-10">              
-
+        <div class="row row-10">
+        <?php
+          $products = new ProductsModel();
+          $showNew = $products -> getAllNewProducts(0, 4);
+          if (empty($showNew)) {
+            echo '<p>Chưa có sản phẩm.</p>';
+          } else {
+            foreach ($showNew as $value) {
+        ?>     
           <div class="col-md-3 col-xs-6">
             <div class="product-item">
               <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
+                <a href="?action=productDetail&id=<?php echo $value['product_id']; ?>">
+                  <img src="../../upload/products/<?php echo $value['featured_img']; ?>" alt="">
                 </a>
+
+                <?php
+                if ($value['discount'] > 0) {
+                ?>
                 <div class="product-label">
                   <span class="sale">sale</span>
                 </div>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.html">Night Party Dress</a>
-                </h3>
-                <span class="price">
-                  <del>
-                    <span>$388.00</span>
-                  </del>
-                  <ins>
-                    <span class="ammount">$159.99</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-          </div>
+                <?php
+                  }
+                ?>
 
-          <div class="col-md-3 col-xs-6">
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
-                </a>
                 <div class="product-actions">
                   <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
+                  <i class="fa fa-exchange"></i></a>
+                  <p><?php echo $value['product_description']; ?></p>                 
                 </div>
-                <a href="#" class="product-quickview">Quick View</a>
+                <a href="?action=productDetail&id=<?php echo $value['product_id']; ?>"
+                class="product-quickview">Xem chi tiết</a>
               </div>
               <div class="product-details">
                 <h3>
-                  <a class="product-title" href="shop-single-product.html">Elegant White Dress</a>
+                  <a class="product-title" href="?action=productDetail&id=<?php echo $value['product_id']; ?>">
+                    <?php echo $value['product_name']; ?>
+                  </a>
                 </h3>
                 <span class="price">
-                  <ins>
-                    <span class="ammount">$219.00</span>
-                  </ins>
+                  <?php
+                    if ($value['discount'] > 0) {
+                  ?>
+                    <del>
+                      <span><?php echo $value['price']; ?> Vnđ</span>
+                    </del>
+
+                    <ins>
+                      <span class="ammount"><?php echo $value['discount']; ?> Vnđ</span>
+                    </ins>
+                  <?php
+                    } else {
+                  ?>
+                    <ins>
+                      <span class="ammount"><?php echo $value['price']; ?> Vnđ</span>
+                    </ins>
+                  <?php
+                    }
+                  ?>
                 </span>
               </div>                          
             </div>
           </div>
-
-          <div class="col-md-3 col-xs-6">
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
-                </a>
-                <span class="sold-out valign">out of stock</span>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.html">Long Black Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$99.00</span>
-                  </ins>
-                </span>
-              </div>                        
-            </div>
-          </div>
-
-          <div class="col-md-3 col-xs-6">
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
-                </a>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.html">Sexy Pink Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$120.00</span>
-                  </ins>
-                </span>
-              </div>                        
-            </div>
-          </div>            
-
+        <?php
+            }
+          }
+        ?>
         </div> <!-- end row -->
       </div>
     </section> <!-- end new arrivals -->
@@ -207,139 +150,57 @@
         </div>
 
         <div class="row row-10">              
-
+        <?php
+          $products = new ProductsModel();
+          $showSale = $products -> getAllSaleProducts(0, 4);
+          if (empty($showSale)) {
+            echo '<p>Chưa có sản phẩm khuyến mãi.</p>';
+          } else {
+            foreach ($showSale as $sale) {
+        ?>  
           <div class="col-md-3 col-xs-6 animated-from-left">
             <div class="product-item">
               <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
+                <a href="?action=productDetail&id=<?php echo $sale['product_id']; ?>">
+                  <img src="../../upload/products/<?php echo $sale['featured_img']; ?>" alt="">
                 </a>
+
+                <div class="product-label">
+                  <span class="sale">sale</span>
+                </div>
+
                 <div class="product-actions">
                   <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
+                  <i class="fa fa-exchange"></i></a>
+                  <p><?php echo $sale['product_description']; ?></p>                  
                 </div>
-                <a href="#" class="product-quickview">Quick View</a>
+                <a href="?action=productDetail&id=<?php echo $sale['product_id']; ?>"
+                class="product-quickview">Xem chi tiết</a>
               </div>
 
               <div class="product-details">
                 <h3>
-                  <a class="product-title" href="shop-single-product.html">Minty Dress</a>
+                  <a class="product-title"
+                  href="?action=productDetail&id=<?php echo $sale['product_id']; ?>">
+                  <?php echo $sale['product_name']; ?></a>
                 </h3>
                 <span class="price">
+                  <del>
+                    <span><?php echo $sale['price']; ?> Vnđ</span>
+                  </del>
                   <ins>
-                    <span class="ammount">$399.00</span>
+                    <span class="ammount"><?php echo $sale['discount']; ?> Vnđ</span>
                   </ins>
                 </span>
               </div>                          
             </div>
-          </div>
-
-          <div class="col-md-3 col-xs-6 animated-from-left">
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
-                </a>
-                <div class="product-label">
-                  <span class="sale">sale</span>
-                </div>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.html">Sexy White Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$119.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 col-xs-6 animated-from-left">
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
-                </a>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.html">Elegant Pink Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$1379.00</span>
-                  </ins>
-                </span>
-              </div>              
-            </div>
-          </div>
-
-          <div class="col-md-3 col-xs-6 animated-from-left">
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="../../public/img/shop/shop_item_1.jpg" alt="">
-                </a>
-                <div class="product-label">
-                  <span class="sale">sale</span>
-                </div>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>                    
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.html">Gray California Dress</a>
-                </h3>
-                <span class="price">
-                  <del>
-                    <span>$350.00</span>
-                  </del>
-                  <ins>
-                    <span class="ammount">$150.00</span>
-                  </ins>
-                </span>
-              </div>                  
-
-            </div>
-          </div>            
-
+          </div>        
+        <?php
+            }
+          }
+        ?>
         </div> <!-- end row -->
       </div>
     </section> <!-- end best sellers -->           
 
-<?php include $ROOT.'public/template/site/footer.php' ?> 
+<?php include $GLOBALS['ROOT'].'public/template/site/footer.php' ?> 

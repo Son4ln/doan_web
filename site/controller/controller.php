@@ -29,11 +29,18 @@
       break;
 
     case 'productList':
-      include '../view/product/productList.php';
+      $product = new Products();
+      $product -> listProducts();
+      break;
+
+    case 'productCate':
+      $product = new Products();
+      $product -> cateProducts();
       break;
 
     case 'productDetail':
-      include '../view/product/productDetail.php';
+      $product = new Products();
+      $product -> productDetail();
       break;
 
     case 'cart':

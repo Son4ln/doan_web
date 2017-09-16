@@ -1,6 +1,33 @@
-<?php include $ROOT.'public/template/site/header.php' ?> 
+<?php include $GLOBALS['ROOT'].'public/template/site/header.php' ?> 
 
 <!-- Breadcrumbs -->
+
+<?php
+  $products = new ProductsModel();
+  $value = $products -> getByIdProduct($id);
+  if (empty($value)) {
+?>
+<div class="container">
+  <ol class="breadcrumb">
+    <li>
+      <a href="?action=home">Trang Chủ</a>
+    </li>
+    <li>
+      <a href="?action=productList">Sản Phẩm</a>
+    </li>
+  </ol> <!-- end breadcrumbs -->
+</div>
+
+<section class="section-wrap single-product">
+  <div class="container relative">
+    <div class="row">
+      <p>Sản phẩm không tồn tại.</p>
+    </div>
+  </div>
+</section>
+<?php
+  } else {
+?>
 <div class="container">
   <ol class="breadcrumb">
     <li>
@@ -10,7 +37,7 @@
       <a href="?action=productList">Sản Phẩm</a>
     </li>
     <li class="active">
-      Chi Tiết Sản Phẩm
+      <?php echo $value['product_name']; ?>
     </li>
   </ol> <!-- end breadcrumbs -->
 </div>
@@ -20,78 +47,93 @@
 <section class="section-wrap single-product">
   <div class="container relative">
     <div class="row">
-
       <div class="col-sm-6 col-xs-12 mb-60">
 
         <div class="flickity flickity-slider-wrap mfp-hover" id="gallery-main">
+        <?php
+          $image = new ImagesModel();
+          $countImg = $image -> countImage($id);
+          if ($countImg[0] == 0) {
+        ?>
+          <div class="gallery-cell">
+            <a href="../../upload/products/<?php echo $value['featured_img']; ?>" class="lightbox-img">
+              <img src="../../upload/products/<?php echo $value['featured_img']; ?>" alt="" />
+            </a>
+          </div>
+        <?php
+          } else {
+            $showImage = $image -> getByIdImage($id);
+            foreach ($showImage as $image) {
+        ?>
 
           <div class="gallery-cell">
-            <a href="img/shop/single_img_1.jpg" class="lightbox-img">
-              <img src="img/shop/single_img_1.jpg" alt="" />
+            <a href="../../upload/products/<?php echo $image['image']; ?>" class="lightbox-img">
+              <img src="../../upload/products/<?php echo $image['image']; ?>" alt="" />
               <i class="icon arrow_expand"></i>
             </a>
           </div>
-          <div class="gallery-cell">
-            <a href="img/shop/single_img_2.jpg" class="lightbox-img">
-              <img src="img/shop/single_img_2.jpg" alt="" />
-              <i class="icon arrow_expand"></i>
-            </a>
-          </div>
-          <div class="gallery-cell">
-            <a href="img/shop/single_img_3.jpg" class="lightbox-img">
-              <img src="img/shop/single_img_3.jpg" alt="" />
-              <i class="icon arrow_expand"></i>
-            </a>
-          </div>
-          <div class="gallery-cell">
-            <a href="img/shop/single_img_4.jpg" class="lightbox-img">
-              <img src="img/shop/single_img_4.jpg" alt="" />
-              <i class="icon arrow_expand"></i>
-            </a>
-          </div>
-          <div class="gallery-cell">
-            <a href="img/shop/single_img_5.jpg" class="lightbox-img">
-              <img src="img/shop/single_img_5.jpg" alt="" />
-              <i class="icon arrow_expand"></i>
-            </a>
-          </div>
+        <?php
+            }
+          }
+        ?>
         </div> <!-- end gallery main -->
 
         <div class="gallery-thumbs">
-
+          <?php
+            $image = new ImagesModel();
+            $countImg = $image -> countImage($id);
+            if ($countImg[0] == 0) {
+          ?>
+            <div class="gallery-cell">
+              <img src="../../upload/products/<?php echo $value['featured_img']; ?>" alt="" />
+            </div>
+          <?php
+            } else {
+              $showImage = $image -> getByIdImage($id);
+              foreach ($showImage as $image) {
+          ?>
           <div class="gallery-cell">
-            <img src="img/shop/single_img_1.jpg" alt="" />
+            <img src="../../upload/products/<?php echo $image['image']; ?>" alt="" />
           </div>
-          <div class="gallery-cell">
-            <img src="img/shop/single_img_2.jpg" alt="" />
-          </div>
-          <div class="gallery-cell">
-            <img src="img/shop/single_img_3.jpg" alt="" />
-          </div>
-          <div class="gallery-cell">
-            <img src="img/shop/single_img_4.jpg" alt="" />
-          </div>
-          <div class="gallery-cell">
-            <img src="img/shop/single_img_5.jpg" alt="" />
-          </div>
+          <?php
+              }
+            }
+          ?>
 
         </div> <!-- end gallery thumbs -->
 
       </div> <!-- end col img slider -->
 
       <div class="col-sm-6 col-xs-12 product-description-wrap">
-        <h1 class="product-title">Summer Dress</h1>
+        <h1 class="product-title"><?php echo $value['product_name']; ?></h1>
         <span class="price">
-          <ins>
-            <span class="ammount">$1250.00</span>
-          </ins>
+          <?php
+            if ($value['discount'] > 0) {
+          ?>
+            <del>
+              <span><?php echo $value['price']; ?> Vnđ</span>
+            </del>
+
+            <ins>
+              <span class="ammount"><?php echo $value['discount']; ?> Vnđ</span>
+            </ins>
+          <?php
+            } else {
+          ?>
+            <ins>
+              <span class="ammount"><?php echo $value['price']; ?> Vnđ</span>
+            </ins>
+          <?php
+            }
+          ?>      
         </span>
-        <p class="product-description">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine</p>
+        <p class="product-description"><?php echo $value['product_description']; ?></p>
 
         <ul class="product-actions clearfix">
           
           <li>
-            <a href="#" class="btn btn-color btn-lg add-to-cart left"><span>Add to Cart</span></a>
+            <a href="?action=addToCart&id=<?php echo $value['product_id']; ?>"
+            class="btn btn-color btn-lg add-to-cart left"><span>Thêm vào giỏ hàng</span></a>
           </li>                
           <li>
             <div class="quantity buttons_added">
@@ -101,9 +143,14 @@
         </ul>
 
         <div class="product_meta">
-          <span class="sku">SKU: <a href="#">111763</a></span>
-          <span class="posted_in">Category: <a href="#">Accessories</a></span>
-          <span class="tagged_as">Tags: <a href="#">Elegant</a>, <a href="#">Bag</a></span>
+          <span class="posted_in">Loại sản phẩm:
+            <?php
+            $cates = new CategoriesModel();
+            $showCate = $cates -> getByIdCategory($value['category_id']);?>
+            <a href="?action=productCate&cate=<?php echo $showCate['category_id']; ?>">
+              <?php echo $showCate['category_name']; ?>
+            </a>
+          </span>
         </div>
       </div> <!-- end col product description -->
     </div> <!-- end row -->
@@ -114,7 +161,7 @@
         <div class="tabs tabs-bb">
           <ul class="nav nav-tabs">                                 
             <li class="active">
-              <a href="#tab-description" data-toggle="tab">Description</a>
+              <a href="#tab-description" data-toggle="tab">Chi Tiết</a>
             </li>
           </ul> <!-- end tabs -->
           
@@ -123,7 +170,7 @@
             
             <div class="tab-pane fade in active" id="tab-description">
               <p>
-              We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind, the hidden and mysterious subconscious. Our subconscious mind contains such power and complexity that it literally staggers the imagination.And finally the subconscious is the mechanism through which thought impulses which are repeated regularly with feeling and emotion are quickened, charged. Our subconscious mind contains such power and complexity that it literally staggers the imagination.And finally the subconscious is the mechanism through which thought impulses.
+              <?php echo $value['product_detail']; ?>
               </p>
             </div>
           </div> <!-- end tab content -->
@@ -135,5 +182,8 @@
     
   </div> <!-- end container -->
 </section> <!-- end single product -->
+<?php
+ }
+?>
 
-<?php include $ROOT.'public/template/site/footer.php' ?> 
+<?php include $GLOBALS['ROOT'].'public/template/site/footer.php' ?> 
