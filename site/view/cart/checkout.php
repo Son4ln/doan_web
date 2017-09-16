@@ -1,10 +1,10 @@
-<?php include $ROOT.'public/template/site/header.php' ?> 
+<?php include $GLOBALS['ROOT'].'public/template/site/header.php' ?> 
 
 <section class="page-title text-center">
   <div class="container relative clearfix">
     <div class="title-holder">
       <div class="title-text">
-        <h1 class="uppercase">Checkout</h1>
+        <h1 class="uppercase">Thanh Toán</h1>
       </div>
     </div>
   </div>
@@ -20,31 +20,31 @@
 
           <div class="col-md-8" id="customer_details">
             <div>
-              <h2 class="heading uppercase mb-30">billing address</h2>
+              <h2 class="heading uppercase mb-30">Thông Tin Khách Hàng</h2>
 
               <p class="form-row form-row-first validate-required ecommerce-invalid ecommerce-invalid-required-field" id="billing_first_name_field">
-                <label for="billing_first_name">Name
+                <label for="billing_first_name">Họ và Tên Khách Hàng
                   <abbr class="required" title="required">*</abbr>
                 </label>
                 <input type="text" class="input-text" placeholder value name="billing_first_name" id="billing_first_name">
               </p>
 
               <p class="form-row form-row-wide address-field validate-required ecommerce-invalid ecommerce-invalid-required-field" id="billing_address_1_field">
-                <label for="billing_address_1">Address
+                <label for="billing_address_1">Địa Chỉ
                   <abbr class="required" title="required">*</abbr>
                 </label>
                 <input type="text" class="input-text" placeholder="Street address" value name="billing_address_1" id="billing_address_1">
               </p>
 
               <p class="form-row form-row-first validate-required validate-email" id="billing_email_field">
-                <label for="billing_email">Email Address
+                <label for="billing_email">Email
                   <abbr class="required" title="required">*</abbr>
                 </label>
                 <input type="text" class="input-text" placeholder value name="billing_email" id="billing_email">
               </p>
 
               <p class="form-row form-row-last validate-required validate-phone" id="billing_phone_field">
-                <label for="billing_phone">Phone
+                <label for="billing_phone">SĐT
                   <abbr class="required" title="required">*</abbr>
                 </label>
                 <input type="text" class="input-text" placeholder value name="billing_phone" id="billing_phone">
@@ -57,8 +57,8 @@
 
             <div>
               <p class="form-row notes ecommerce-validated" id="order_comments_field">
-                <label for="order_comments">Order Notes</label>
-                <textarea name="order_comments" class="input-text" id="order_comments" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5"></textarea>
+                <label for="order_comments">Ghi Chú</label>
+                <textarea name="order_comments" class="input-text" id="order_comments" placeholder="Ghi chú về đơn hàng của bạn, ví dụ: ghi chú đặc biệt để giao hàng." rows="2" cols="5"></textarea>
               </p>
             </div>
 
@@ -69,7 +69,7 @@
 
           <div class="col-md-4">
             <div class="order-review-wrap ecommerce-checkout-review-order" id="order_review">
-              <h2 class="heading uppercase mb-30">Your Order</h2>
+              <h2 class="heading uppercase mb-30">Đơn Hàng Của Bạn</h2>
               <table class="table shop_table ecommerce-checkout-review-order-table">
                 <tbody>
                   <tr>
@@ -85,19 +85,19 @@
                     </td>
                   </tr>
                   <tr class="cart-subtotal">
-                    <th>Cart Subtotal</th>
+                    <th>Tổng Đơn Hàng</th>
                     <td>
                       <span class="amount">$1799.00</span>
                     </td>
                   </tr>
                   <tr class="shipping">
-                    <th>Shipping</th>
+                    <th>Phí Vận Chuyển</th>
                     <td>
                       <span>Free Shipping</span>
                     </td>
                   </tr>
                   <tr class="order-total">
-                    <th><strong>Order Total</strong></th>
+                    <th><strong>Tổng Thanh Toán</strong></th>
                     <td>
                       <strong><span class="amount">$1799.00</span></strong>
                     </td>
@@ -120,4 +120,4 @@
   </div> <!-- end container -->
 </section> <!-- end checkout -->
 
-<?php include $ROOT.'public/template/site/footer.php' ?> 
+<?php include $GLOBALS['ROOT'].'public/template/site/footer.php' ?> 

@@ -1,7 +1,8 @@
 <?php
   class ContactController
   {
-  	function addContact() {
+  	function addContact() 
+    {
       $full_name = $_POST['full_name'];
       $email = $_POST['email'];
       $subject = $_POST['subject'];
@@ -23,6 +24,17 @@
       $lv = 'success';
       BasicLibs::setAlert($mess, $lv);
       BasicLibs::redirect($action);
+    }
+
+    // function showContact()
+    // {
+    //   $contact = new ContactModel();
+    //   $data = $contact -> getContact();
+    // }
+
+    function showContact()
+    {
+      include '../view/about.php';
     }
   }
 ?>
