@@ -1,4 +1,4 @@
-<?php include $ROOT.'public/template/site/header.php' ?>
+<?php include $GLOBALS['ROOT'].'public/template/site/header.php' ?>
 
 <section class="page-title text-center">
   <div class="container relative clearfix">
@@ -23,7 +23,7 @@
                 <th class="product-name" colspan="2">Tên sản phẩm</th>
                 <th class="product-price">Đơn giá</th>
                 <th class="product-quantity">Số lương</th>
-                <th class="product-subtotal">Tổng giá</th>
+                <th class="product-subtotal">Tổng cộng</th>
               </tr>
             </thead>
             <tbody class="cart-tbody">
@@ -37,29 +37,29 @@
     <div class="row">
       <div class="col-md-8">
         <div class="cart_totals">
-          <h2 class="heading relative heading-small uppercase mb-30">Cart Totals</h2>
+          <h2 class="heading relative heading-small uppercase mb-30">Tổng Giỏ Hàng</h2>
 
           <table class="table shop_table">
             <tbody>
               <tr class="cart-subtotal">
-                <th>Tổng cộng</th>
+                <th>Tổng Giỏ Hàng</th>
               </tr>
               <tr class="shipping">
-                <th>Giao hàng</th>
+                <th>Phí Vận Chuyển</th>
                 <td>
                   <span>Thu khi giao hàng</span>
                 </td>
               </tr>
               <tr class="order-total">
-                <th><strong>Tổng hóa đơn</strong></th>
+                <th><strong>Tổng Thanh Toán</strong></th>
                 <td>
                   <strong><span class="amount total-order"></span></strong>
                 </td>
               </tr>
             </tbody>
           </table>
-          <a href="shop-checkout.html" class="btn btn-md btn-color mt-20 mb-mdm-40"><span>Thanh Toán</span></a>
 
+          <a href="shop-checkout.html" class="btn btn-md btn-color mt-20 mb-mdm-40"><span>Thanh Toán</span></a>
         </div>
       </div> <!-- end col cart totals -->
 

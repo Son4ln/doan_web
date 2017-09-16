@@ -25,7 +25,8 @@
       break;
 
     case 'about':
-      include '../view/about.php';
+      $contact = new ContactController();
+      $contact -> showContact();
       break;
 
     case 'productList':

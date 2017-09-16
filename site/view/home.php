@@ -179,12 +179,12 @@
 
                 <div class="product-actions">
                   <a id="cart" class="product-add-to-compare add-cart" data-toggle="tooltip" data-placement="bottom" 
-                      title="Thêm vào giỏ hảng" data-id="<?php echo $value['product_id']; ?>" data-name="<?php echo $value['product_name']; ?>" data-img="<?php echo $value['featured_img']; ?>"
+                      title="Thêm vào giỏ hảng" data-id="<?php echo $sale['product_id']; ?>" data-name="<?php echo $sale['product_name']; ?>" data-img="<?php echo $sale['featured_img']; ?>"
                       data-price="<?php 
-                        if ($value['discount']) {
-                          echo $value['discount'];
+                        if ($sale['discount']) {
+                          echo $sale['discount'];
                         } else {
-                          echo $value['price'];
+                          echo $sale['price'];
                         }
                       ?>">
                   <i class="fa fa-shopping-cart"></i></a>

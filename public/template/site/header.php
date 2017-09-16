@@ -24,12 +24,12 @@
   <main class="content-wrapper oh">
     
     <!-- Preloader -->
-    <div class="loader-mask">
+<!--     <div class="loader-mask">
       <div class="loader">
         <div></div>
         <div></div>
       </div>
-    </div>
+    </div> -->
     
     <!-- Navigation -->
     <header class="nav-type-1">    
