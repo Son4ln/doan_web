@@ -62,8 +62,8 @@
             -->
 
             <div class="logo">
-                <a href="" class="simple-text">
-                    Đỗ An Shop
+                <a href="?action=home" class="simple-text">
+                    Công Ty TNHH Đỗ An
                 </a>
             </div>
 
@@ -185,7 +185,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Material Dashboard</a>
+                        <a class="navbar-brand" href="#">Bảng Điều Khiển</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
