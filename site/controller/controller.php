@@ -24,8 +24,8 @@
       include '../view/home.php';
       break;
 
-    case 'login':
-      include '../view/login/login.php';
+    case 'about':
+      include '../view/about.php';
       break;
 
     case 'productList':

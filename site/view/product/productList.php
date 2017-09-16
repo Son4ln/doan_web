@@ -4,13 +4,10 @@
 <div class="container">
   <ol class="breadcrumb">
     <li>
-      <a href="index.html">Home</a>
+      <a href="?action=home">Trang Chủ</a>
     </li>
     <li>
-      <a href="index.html">Shop</a>
-    </li>
-    <li class="active">
-      Catalog Grid
+      <a href="?action=productList">Sản Phẩm</a>
     </li>
   </ol> <!-- end breadcrumbs -->
 </div>
