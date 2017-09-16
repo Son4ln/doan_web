@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="../public/img/fav.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700&amp;subset=vietnamese" rel="stylesheet">
@@ -61,7 +62,7 @@
                   <!-- Search -->
                   <div class="nav-search hidden-sm hidden-xs">
                     <form method="get">
-                      <input type="search" class="form-control" placeholder="Search">
+                      <input type="search" class="form-control" placeholder="Tìm Kiếm">
                       <button type="submit" class="search-button">
                         <i class="icon icon_search"></i>
                       </button>
@@ -71,7 +72,7 @@
                   <!-- Logo -->
                   <div class="logo-container">
                     <div class="logo-wrap text-center">
-                      <a href="index.html">
+                      <a href="?action=home">
                         <img class="logo hidden-sm img-responsive hidden-xs" src="../../public/img/logo.png">
                       </a>
                     </div>
@@ -131,19 +132,19 @@
                         </div> <!-- end cart items -->
 
                         <div class="nav-cart-summary">
-                          <span>Cart Subtotal</span>
+                          <span>Tổng Giỏ Hàng</span>
                           <span class="total-price">$1799.00</span>
                         </div>
 
                         <div class="nav-cart-actions mt-20">
-                          <a href="shop-cart.html" class="btn btn-md btn-dark"><span>View Cart</span></a>
-                          <a href="shop-checkout.html" class="btn btn-md btn-color mt-10"><span>Proceed to Checkout</span></a>
+                          <a href="shop-cart.html" class="btn btn-md btn-dark"><span>Xem Giỏ Hàng</span></a>
+                          <a href="shop-checkout.html" class="btn btn-md btn-color mt-10"><span>Chuyển Sang Thanh Toán</span></a>
                         </div>
                       </div>
                     </div>
                     <div class="menu-cart-amount right">
                       <span>
-                        Cart /
+                        Giỏ Hàng /
                         <a href="#"> $1299.50</a>
                       </span>
                     </div>
@@ -159,7 +160,7 @@
 
                     <li id="mobile-search" class="hidden-lg hidden-md">
                       <form method="get" class="mobile-search relative">
-                        <input type="search" class="form-control" placeholder="Search...">
+                        <input type="search" class="form-control" placeholder="Tìm Kiếm...">
                         <button type="submit" class="search-button">
                           <i class="icon icon_search"></i>
                         </button>
@@ -175,7 +176,7 @@
                     </li>
 
                     <li class="dropdown">
-                      <a href="?action=product">Sản Phẩm</a>
+                      <a href="?action=productList">Sản Phẩm</a>
                     </li>
 
                     <li class="dropdown">

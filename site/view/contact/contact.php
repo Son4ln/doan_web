@@ -4,13 +4,10 @@
 <div class="container">
   <ol class="breadcrumb">
     <li>
-      <a href="index.html">Home</a>
-    </li>
-    <li>
-      <a href="#">Pages</a>
+      <a href="?action=home">Trang Chủ</a>
     </li>
     <li class="active">
-      Contact
+      <a href="?action=contact">Liên Hệ</a>
     </li>
   </ol> <!-- end breadcrumbs -->
 </div>
@@ -21,38 +18,38 @@
     <div class="row">
 
       <div class="col-md-8">
-        <h5 class="uppercase mb-30">Send Us Message</h5>
+        <h5 class="uppercase mb-30">Liên Hệ Với Chúng Tôi</h5>
         <?php
             BasicLibs::getAlert();
         ?>
         <form id="contact-form" action="?action=addContact" method="post">
           <div id="message" class="alert alert-danger hidden"></div>          
           <div class="contact-name">
-            <input name="full_name" id="name" type="text" placeholder="Name*">
+            <input name="full_name" id="name" type="text" placeholder="Tên*">
           </div>
           <div class="contact-email">
             <input name="email" id="mail" type="email" placeholder="E-mail*">
           </div>
           <div class="contact-subject">
-            <input name="subject" id="subject" type="text" placeholder="Subject">
+            <input name="subject" id="subject" type="text" placeholder="Tiêu Đề">
           </div>                
 
-          <textarea name="message" id="message" placeholder="Message" rows="9"></textarea>
-          <button type="submit" class="btn btn-lg btn-color btn-submit">Submit</button>              
+          <textarea name="message" id="message" placeholder="Nội Dung" rows="9"></textarea>
+          <button type="submit" class="btn btn-lg btn-color btn-submit">Gửi</button>              
         </form>
       </div> <!-- end col -->
 
       <div class="col-md-4 mb-40 mt-mdm-40 contact-info">
 
         <div class="address-wrap">
-          <h4 class="uppercase">Address</h4>
+          <h4 class="uppercase">Địa Chỉ</h4>
           <h6>Philippines Store</h6>
           <address class="address">Philippines, PO Box 620067, Talay st. 66, A-ha inc.</address>
           <h6>Canada Store</h6>
           <address class="address">A-ha inc, 10-123 Main st. NW, Montreal QC, H3Z2Y7</address>
         </div>
 
-        <h4 class="uppercase">Contact Info</h4>
+        <h4 class="uppercase">Thông Tin Liên Hệ</h4>
         <ul class="contact-info-list">
           <li><span>Phone: </span><a href="tel:+1-888-1554-456-123">+ 1-888-1554-456-123</a></li>
           <li><span>Email: </span><a href="mailto:themesupport@gmail.com" class="sliding-link">themesupport@gmail.com</a></li>
