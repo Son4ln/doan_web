@@ -52,7 +52,6 @@
     };
     let form = document.querySelector('.form-user');
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
       let newPass = document.getElementById('new-pass');
       let rePass = document.getElementById('repass');
       let mess = document.querySelector('.alert-form');

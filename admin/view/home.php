@@ -143,7 +143,7 @@
       dataType:"text",
       data : {},
       success : function (result){
-        countOrder.innerHTML = `${result} <small>Orders</small>`;
+        countOrder.innerHTML = `${result} <small>Hóa đơn</small>`;
       },
       error: function() {
         countOrder.innerHTML = '???';
@@ -159,7 +159,7 @@
       dataType: 'text',
       data: {},
       success: function(result) {
-        countNewOrder.innerHTML = `${result} <small>New Orders</small>`;
+        countNewOrder.innerHTML = `${result} <small>Hóa đơn mới</small>`;
       },
       error: function(result) {
         countNewOrder.innerHTML = '???';
