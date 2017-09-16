@@ -132,12 +132,21 @@
         <ul class="product-actions clearfix">
           
           <li>
-            <a href="?action=addToCart&id=<?php echo $value['product_id']; ?>"
-            class="btn btn-color btn-lg add-to-cart left"><span>Thêm vào giỏ hàng</span></a>
+            <a id="cart" class="btn btn-color btn-lg add-to-cart left" 
+            data-id="<?php echo $value['product_id']; ?>" data-name="<?php echo $value['product_name']; ?>" 
+            data-img="<?php echo $value['featured_img']; ?>"
+            data-price="<?php 
+                        if ($value['discount']) {
+                          echo $value['discount'];
+                        } else {
+                          echo $value['price'];
+                        }
+                      ?>"
+             ><span>Thêm vào giỏ hàng</span></a>
           </li>                
           <li>
             <div class="quantity buttons_added">
-              <input type="button" value="-" class="minus" /><input type="number" step="1" min="0" value="1" title="Qty" class="input-text qty text" /><input type="button" value="+" class="plus" />
+              <input type="number" step="1" min="0" value="1" title="Qty" class="input-text qty text" />
             </div>
           </li>          
         </ul>
@@ -186,4 +195,62 @@
  }
 ?>
 
-<?php include $GLOBALS['ROOT'].'public/template/site/footer.php' ?> 
+<?php include $GLOBALS['ROOT'].'public/template/site/footer.php' ?>
+
+<script type="text/javascript">
+  let addToCart = {
+    listCart: []
+  };
+
+  $(document).ready(() => {
+    saveAddToCart();
+    addCart();
+  });
+
+  function saveAddToCart() {
+  // window.localStorage.removeItem("cart");
+    if(localStorage.cart) {
+      addToCart.listCart = JSON.parse(localStorage.cart);
+    }
+  }
+
+  function addCart() {
+    let add = document.querySelector('.add-to-cart');
+    add.addEventListener('click', (e) => {
+      let qty = document.querySelector('.qty').value;
+      let product = e.target;
+      if (e.target.getAttribute('id') != 'cart') {
+        product = e.target.parentElement;
+      }
+
+      let id = product.getAttribute('data-id');
+      let name = product.getAttribute('data-name');
+      let img = product.getAttribute('data-img');
+      let price = product.getAttribute('data-price');
+      let quantity = qty;
+
+      let addProduct = {
+        id: id,
+        name: name,
+        img: img,
+        price: price,
+        quantity: quantity
+      };
+
+      if (addToCart.listCart != '') {
+        for (let index of addToCart.listCart) {
+          if (index.id === id) {
+            index.quantity = parseInt(index.quantity) + parseInt(addProduct.quantity);
+            localStorage.setItem('cart', JSON.stringify(addToCart.listCart));
+            window.location.href = '?action=cart';
+            return;
+          }
+        }
+      }
+
+      addToCart.listCart.push(addProduct);
+      localStorage.setItem('cart', JSON.stringify(addToCart.listCart));
+      window.location.href = '?action=cart';
+    });
+  }
+</script>
