@@ -1,4 +1,8 @@
 <?php include $ROOT.'public/template/site/header.php' ?>
+<?php 
+  $contactInfo = new ContactModel();
+  $resultContactInfo = $contactInfo -> getContact();
+?>
 
 <!-- Breadcrumbs -->
 <div class="container">
@@ -43,17 +47,14 @@
 
         <div class="address-wrap">
           <h4 class="uppercase">Địa Chỉ</h4>
-          <h6>Philippines Store</h6>
-          <address class="address">Philippines, PO Box 620067, Talay st. 66, A-ha inc.</address>
-          <h6>Canada Store</h6>
-          <address class="address">A-ha inc, 10-123 Main st. NW, Montreal QC, H3Z2Y7</address>
+          <h6><?php echo $resultContactInfo['branch']; ?></h6>
+          <address class="address"><?php echo $resultContactInfo['address']; ?></address>
         </div>
 
         <h4 class="uppercase">Thông Tin Liên Hệ</h4>
         <ul class="contact-info-list">
-          <li><span>Phone: </span><a href="tel:+1-888-1554-456-123">+ 1-888-1554-456-123</a></li>
-          <li><span>Email: </span><a href="mailto:themesupport@gmail.com" class="sliding-link">themesupport@gmail.com</a></li>
-          <li><span>Skype: </span><a href="#">ahasupport</a></li>
+          <li><span>SĐT: </span><a><?php echo $resultContactInfo['phone']; ?></a></li>
+          <li><span>Email: </span><a class="sliding-link"><?php echo $resultContactInfo['email']; ?></a></li>
         </ul>
       </div>          
 
