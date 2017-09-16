@@ -1,4 +1,4 @@
-<?php include $ROOT.'public/template/site/header.php' ?>
+<?php include $GLOBALS['ROOT'].'public/template/site/header.php' ?>
 <?php 
   $contactInfo = new ContactModel();
   $resultContactInfo = $contactInfo -> getContact();
@@ -105,4 +105,4 @@
   });
 </script>
 
-<?php include $ROOT.'public/template/site/footer.php' ?>   
+<?php include $GLOBALS['ROOT'].'public/template/site/footer.php' ?>   

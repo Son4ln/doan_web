@@ -1,10 +1,10 @@
-<?php include $ROOT.'public/template/site/header.php' ?>
+<?php include $GLOBALS['ROOT'].'public/template/site/header.php' ?>
 
 <section class="page-title text-center">
   <div class="container relative clearfix">
     <div class="title-holder">
       <div class="title-text">
-        <h1 class="uppercase">Shopping Cart</h1>
+        <h1 class="uppercase">Giỏ Hàng</h1>
       </div>
     </div>
   </div>
@@ -20,10 +20,10 @@
           <table class="shop_table cart table">
             <thead>
               <tr>
-                <th class="product-name" colspan="2">Product</th>
-                <th class="product-price">Price</th>
-                <th class="product-quantity">Quantity</th>
-                <th class="product-subtotal">Total</th>
+                <th class="product-name" colspan="2">Sản Phẩm</th>
+                <th class="product-price">Giá</th>
+                <th class="product-quantity">Số Lượng</th>
+                <th class="product-subtotal">Tổng Cộng</th>
               </tr>
             </thead>
             <tbody>
@@ -97,31 +97,31 @@
     <div class="row">
       <div class="col-md-8">
         <div class="cart_totals">
-          <h2 class="heading relative heading-small uppercase mb-30">Cart Totals</h2>
+          <h2 class="heading relative heading-small uppercase mb-30">Tổng Giỏ Hàng</h2>
 
           <table class="table shop_table">
             <tbody>
               <tr class="cart-subtotal">
-                <th>Cart Subtotal</th>
+                <th>Tổng Giỏ Hàng</th>
                 <td>
                   <span class="amount">$1490.00</span>
                 </td>
               </tr>
               <tr class="shipping">
-                <th>Shipping</th>
+                <th>Phí Vận Chuyển</th>
                 <td>
                   <span>Free Shipping</span>
                 </td>
               </tr>
               <tr class="order-total">
-                <th><strong>Order Total</strong></th>
+                <th><strong>Tổng Thanh Toán</strong></th>
                 <td>
                   <strong><span class="amount">$1490.00</span></strong>
                 </td>
               </tr>
             </tbody>
           </table>
-          <button type="submit" name="calc_shipping" value="1" class="btn btn-md btn-dark mt-20 mb-mdm-40">Update Totals</button>
+          <button type="submit" name="calc_shipping" value="1" class="btn btn-md btn-dark mt-20 mb-mdm-40">Thanh Toán</button>
 
         </div>
       </div> <!-- end col cart totals -->
@@ -132,4 +132,4 @@
   </div> <!-- end container -->
 </section> <!-- end cart -->  
 
-<?php include $ROOT.'public/template/site/footer.php' ?> 
+<?php include $GLOBALS['ROOT'].'public/template/site/footer.php' ?> 
