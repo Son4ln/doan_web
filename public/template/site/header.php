@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="../public/img/fav.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../public/img/fav.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700&amp;subset=vietnamese" rel="stylesheet">
