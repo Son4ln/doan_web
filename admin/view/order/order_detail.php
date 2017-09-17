@@ -86,7 +86,7 @@
                     <th class="hidden-xs">Sản phẩm</th>
                     <th>Số lượng</th>
                     <th>Giá</th>
-                    <th>Gái giảm</th>
+                    <th>Giá giảm</th>
                     <th>Thành tiền</th>
                   </tr>
 
@@ -143,11 +143,5 @@
   <?php
     } 
   ?>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#products-list').DataTable();
-    });
-  </script>
 
 <?php include $GLOBALS['ROOT'].'public/template/admin/footer.php'; ?>

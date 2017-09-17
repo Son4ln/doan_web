@@ -98,7 +98,7 @@
 
                         <div class="nav-cart-actions mt-20">
                           <a href="?action=cart" class="btn btn-md btn-dark"><span>Xem Giỏ Hàng</span></a>
-                          <a href="shop-checkout.html" class="btn btn-md btn-color mt-10"><span>Chuyển Sang Thanh Toán</span></a>
+                          <a href="?action=checkout" id="checkout" class="btn btn-md btn-color mt-10"><span>Chuyển Sang Thanh Toán</span></a>
                         </div>
                       </div>
                     </div>

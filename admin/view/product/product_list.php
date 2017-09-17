@@ -48,7 +48,7 @@
                     <td><?php echo $value['product_id']; ?></td>
                     <td><?php echo $value['product_name']; ?></td>
                     <td class="hidden-sm hidden-xs">
-                      <img src="../../upload/products/<?php echo $value['featured_img']; ?>" style="width: 50px;">
+                      <img src="../../upload/products/<?php echo $value['featured_img']; ?>" style="width: 100px;">
                     </td>
                     <td class="hidden-xs"><?php echo $value['price']; ?></td>
                     <td class="hidden-sm hidden-xs"><?php echo $value['discount']; ?></td>

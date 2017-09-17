@@ -59,7 +59,7 @@
             </tbody>
           </table>
 
-          <a href="shop-checkout.html" class="btn btn-md btn-color mt-20 mb-mdm-40"><span>Thanh Toán</span></a>
+          <a href="?action=checkout" id="cart-checkout" class="btn btn-md btn-color mt-20 mb-mdm-40"><span>Thanh Toán</span></a>
         </div>
       </div> <!-- end col cart totals -->
 
@@ -94,7 +94,9 @@
     let totals = 0;
     let cartBody = document.querySelector('.cart-tbody');
     let totalOrder = document.querySelector('.total-order');
+    let cartCheckout = document.getElementById('cart-checkout');
     if (stateCartPage.listCart.length > 0) {
+      cartCheckout.classList.remove('disabled');
       for (let item of stateCartPage.listCart) {
         let itemPriceTotal = item.price * item.quantity;
         let content = `
@@ -136,6 +138,8 @@
           <td colspan="5"><center><h2>Giỏ hàng trống</h2></center></td>
         </tr>
       `;
+
+      cartCheckout.classList.add('disabled');
     }
     
 
