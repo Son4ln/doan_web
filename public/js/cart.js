@@ -50,7 +50,6 @@ function saveCart() {
 }
 
 function saveState() {
-	// window.localStorage.removeItem("cart");
 	if(localStorage.cart) {
 		stateCart.listProducts = JSON.parse(localStorage.cart);
 	}
@@ -65,8 +64,10 @@ function showCart(dataCart) {
 	let totalItem = document.querySelector('.desk-num');
 	let totalPrice = document.querySelector('.total-price');
 	let showTotal = document.querySelector('.show-total');
+	let checkout = document.getElementById('checkout');
 
 	if (dataCart.length > 0) {
+		checkout.classList.remove('disabled');
 		for (let item of dataCart) {
 			priceTotal += item.price * item.quantity;
 			let content = `
@@ -95,7 +96,8 @@ function showCart(dataCart) {
 			count++;
 		}
 	} else {
-		html = '<center>Giỏ hàng trống</center>'
+		html = '<center>Giỏ hàng trống</center>';
+		checkout.classList.add('disabled');
 	}
 	
 

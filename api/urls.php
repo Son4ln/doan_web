@@ -37,8 +37,9 @@
   } elseif ($verb == 'POST') {
       //tạo link api với phương thức post
       switch ($url) {
-        case '':
-          
+        case 'clientOrder':
+          $order = new ClientOrderAct();
+          $order -> post();
           break;
 
         default:
