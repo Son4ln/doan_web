@@ -33,6 +33,11 @@
       parent::exec($query);
     }
 
+    function updateDate($id, $status) {
+      $query = "update orders set received_date = CURDATE(), order_status = '$status' where order_id = '$id'";
+      parent::exec($query);
+    }
+
     //delete order
     function deleteOrderDetail($id) {
       $detail = "delete from order_detail where order_id = '$id'";

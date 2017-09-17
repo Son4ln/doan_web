@@ -40,7 +40,11 @@
       $status = $_GET['status'];
       $update = new OrdersModel();
       try {
-        $update -> updateStatus($id, $status);
+        if ($status == 1) {
+          $update -> updateDate($id, $status);
+        } else {
+          $update -> updateStatus($id, $status);
+        }
       } catch(PDOException $e) {
         $mess = "Sửa thất bại";
         $action = 'listOrder';
@@ -62,7 +66,11 @@
       $status = $_GET['status'];
       $update = new OrdersModel();
       try {
-        $update -> updateStatus($id, $status);
+        if ($status == 1) {
+          $update -> updateDate($id, $status);
+        } else {
+          $update -> updateStatus($id, $status);
+        }
       } catch(PDOException $e) {
         $mess = "Sửa thất bại";
         $action = 'orderDetail';

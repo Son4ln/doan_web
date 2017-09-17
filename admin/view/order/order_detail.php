@@ -37,7 +37,14 @@
 
                   <tr>
                     <td class="text-primary"><b>Ngày nhận hàng:</b></td>
-                    <td><?php echo date_format(date_create_from_format('Y-m-d', $value['received_date']), 'd/m/Y'); ?></td>
+                    <td>
+                    <?php
+                      if ($value['received_date'] == '0000-00-00') {
+                          echo 'Chưa xác định ngày';
+                        } else {
+                          echo date_format(date_create_from_format('Y-m-d', $value['received_date']), 'd/m/Y');
+                        }
+                    ?></td>
                   </tr>
 
                   <tr>
@@ -85,8 +92,7 @@
 
                   <?php
                     $data = $order -> getAllByIdOrders($id);
-                    if (empty($data)) {
-                    } else {
+                    if (!empty($data)) {
                       foreach ($data as $detail) {
                         $product = new ProductsModel();
                         $pro = $product -> getByIdProduct($detail['product_id']);
