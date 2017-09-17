@@ -23,7 +23,7 @@
                 <input type="hidden" name="id" value="<?php echo $result['product_id']; ?>">
                 <div class="row">
                   <div class="col-md-7 col-md-offset-1 col-xs-12">
-                    <center><img id="review-img" src="../../upload/products/<?php echo $result['featured_img']; ?>" width="100"></center>
+                    <center><img id="review-img" src="../../upload/products/<?php echo $result['featured_img']; ?>" style="width: 100px;"></center>
                     <input type="hidden" name="current-img" value="<?php echo $result['featured_img']; ?>">
                     <div class="row">
                       <div class="col-xs-8 col-xs-offset-2 text-center">
