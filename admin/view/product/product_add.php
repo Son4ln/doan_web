@@ -17,7 +17,7 @@
 
               <form enctype="multipart/form-data" method="post" action="?action=actionAddProduct" id="add-pro">
                 <div class="row">
-                  <div class="col-md-7 col-md-offset-1 col-xs-12">
+                  <div class="col-md-12 col-xs-12">
                   <center><img id="review-img" src="../../upload/sliders/logo.png" id="review-img" style="width: 100px"></center>
                     <div class="row text-center">
                       <label class="btn btn-file btn-primary">
