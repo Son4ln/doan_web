@@ -13,5 +13,10 @@
       $id = $_GET['id'];
   		include '../view/product/productDetail.php';
   	}
+
+    function searchProduct() {
+      $search = $_POST['search'];     
+      include '../view/search.php';
+    }
   }
 ?>

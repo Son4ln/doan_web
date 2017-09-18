@@ -24,6 +24,11 @@
       include '../view/home.php';
       break;
 
+    case 'search':
+      $search = new Products();
+      $search -> searchProduct();
+      break;
+
     case 'about':
       $contact = new ContactController();
       $contact -> showContact();

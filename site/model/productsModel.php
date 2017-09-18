@@ -64,5 +64,11 @@
       $result = parent::getList($query);
       return $result;
     }
+
+    function search($sch) {
+      $query = "select * from products where product_public = 1 and product_name like '%$sch%'";
+      $result = parent::getList($query);
+      return $result;
+    }
   }
 ?>

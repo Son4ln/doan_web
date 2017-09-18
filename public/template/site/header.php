@@ -61,8 +61,8 @@
 
                   <!-- Search -->
                   <div class="nav-search hidden-sm hidden-xs">
-                    <form method="get">
-                      <input type="search" class="form-control" placeholder="Tìm Kiếm">
+                    <form method="post" action="?action=search">
+                      <input type="search" class="form-control" placeholder="Tìm Kiếm" name="search" id="search">
                       <button type="submit" class="search-button">
                         <i class="icon icon_search"></i>
                       </button>
@@ -119,7 +119,7 @@
                   <ul class="nav navbar-nav">
 
                     <li id="mobile-search" class="hidden-lg hidden-md">
-                      <form method="get" class="mobile-search relative">
+                      <form method="post" class="mobile-search relative">
                         <input type="search" class="form-control" placeholder="Tìm Kiếm...">
                         <button type="submit" class="search-button">
                           <i class="icon icon_search"></i>
