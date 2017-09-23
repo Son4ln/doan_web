@@ -29,4 +29,5 @@
   include 'app/ContactController.php';
   include 'app/SlidersController.php';
   include 'app/LoginController.php';
+  include 'app/ImageController.php';
 ?>

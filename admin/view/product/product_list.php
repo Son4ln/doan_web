@@ -70,9 +70,15 @@
                     <td class="text-center">
                       <a href="?action=editProduct&id=<?php echo $value['product_id']; ?>">
                       <i class="fa fa-edit"></i> Sửa</a> | 
+
                       <a onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này')" 
                       href="?action=deleteProduct&id=<?php echo $value['product_id']; ?>"> 
-                      <i class="fa fa-trash"></i> Xóa</a>
+                      <i class="fa fa-trash"></i> Xóa</a> | 
+
+                      <a href="?action=listImg&id=<?php echo $value['product_id']; ?>">
+                        <i class="fa fa-file-image-o"></i>
+                        Hình ảnh
+                      </a>
                     </td>
                   </tr>
                   <?php }

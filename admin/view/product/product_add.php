@@ -164,6 +164,7 @@
 
   <script type="text/javascript">
     //hiển thị ảnh để xem trước
+    CKEDITOR.replace('detail');
     let uploadImg = document.querySelector('[name="feature"]');
     uploadImg.addEventListener('change', () => {
       let review = document.getElementById('review-img');

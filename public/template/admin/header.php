@@ -48,6 +48,7 @@
     <script src="../../public/js/jquery.dataTables.min.js"></script>
     <script src="../../public/js/dataTables.bootstrap.min.js"></script>
     <script src="../../public/js/bootstrap-editable.min.js"></script>
+    <script src="../../public/js/ckeditor/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>

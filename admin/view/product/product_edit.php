@@ -175,7 +175,7 @@
                       </button>
                     </a>
                     
-                    <button type="submit" disabled="disabled" class="btn btn-primary pull-left">Cập nhật</button>
+                    <button type="submit" class="btn btn-primary pull-left">Cập nhật</button>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -188,6 +188,7 @@
   </div>
 
     <script type="text/javascript">
+      CKEDITOR.replace('detail');
       // lấy giá trị gốc trong input
       let dataImg = document.querySelector('[name="current-img"]').value;
       let dataName = document.querySelector('[name="name"]').value;
@@ -280,23 +281,23 @@
       }
 
       //đặt 0.5s để nhận kết quả và xét điều kiện nút submit
-      setInterval(() => {
-        let newImg = document.querySelector('[name="feature"]').value;
-        let newName = document.querySelector('[name="name"]').value.trim();
-        let newPrice = document.querySelector('[name="price"]').value.trim();
-        let newDiscount = document.querySelector('[name="discount"]').value.trim();
-        let newDescription = document.querySelector('[name="description"]').value.trim();
-        let newDetail = document.querySelector('[name="detail"]').value.trim();
-        let newPublic = document.querySelector('[name="public"]').value.trim();
-        let newCate = document.querySelector('[name="cate"]').value.trim();
+      // setInterval(() => {
+      //   let newImg = document.querySelector('[name="feature"]').value;
+      //   let newName = document.querySelector('[name="name"]').value.trim();
+      //   let newPrice = document.querySelector('[name="price"]').value.trim();
+      //   let newDiscount = document.querySelector('[name="discount"]').value.trim();
+      //   let newDescription = document.querySelector('[name="description"]').value.trim();
+      //   let newDetail = document.querySelector('[name="detail"]').value.trim();
+      //   let newPublic = document.querySelector('[name="public"]').value.trim();
+      //   let newCate = document.querySelector('[name="cate"]').value.trim();
 
-        if(newName != dataName || newPrice != dataPrice || newDiscount != dataDiscount || newDescription != dataDescription
-          || newDetail != dataDetail || newPublic != dataPublic || newCate != dataCate || newImg != '') {
-          document.querySelector('[type="submit"]').disabled = false;
-        } else {
-          document.querySelector('[type="submit"]').disabled = true;
-        }
-      },500);
+      //   if(newName != dataName || newPrice != dataPrice || newDiscount != dataDiscount || newDescription != dataDescription
+      //     || newDetail != dataDetail || newPublic != dataPublic || newCate != dataCate || newImg != '') {
+      //     document.querySelector('[type="submit"]').disabled = false;
+      //   } else {
+      //     document.querySelector('[type="submit"]').disabled = true;
+      //   }
+      // },500);
 
       let editPro = document.getElementById('edit-pro');
       editPro.addEventListener('submit', (e) => {

@@ -185,7 +185,21 @@
       $contact = new ContactController();
       $contact -> contactDetail();
       break;
+
+    case 'listImg':
+      $img = new ProductImages();
+      $img -> listImg();
+      break;
+
+    case 'delImg':
+      $img = new ProductImages();
+      $img -> delImg();
+      break;
   
+    case 'addImg':
+      $img = new ProductImages();
+      $img -> addImg();
+      break;
     default:
       //include lỗi 404 vào đây
       break;
